@@ -2,7 +2,28 @@
 name = "brag-server"
 version = "0.1.0"
 edition = "2021"
+about = """A gateway to brag-worthy developer productivity metrics. \
+Harness the power of data-driven insights from your registered git \
+repositories to showcase your achievements. Let your code do the bragging!"""
+description = "`brag-server` is a web server API written in Rust that retrieves data and metrics of git repositories."
+license-file = "LICENSE"
+homepage = "https://github.com/cwnt-io/brag-server"
+repository = "https://github.com/cwnt-io/brag-server"
+keywords = ["api", "git", "projects", "server", "rest"]
+categories = ["parsing", "parser-implementations", "web-programming"]
+
+[package.metadata.release]
+allow-branch = ["master","staging", "develop"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.75"
+axum = "0.6.20"
+listenfd = "1.0.1"
+serde = { version = "1.0.192", features = ["derive"] }
+tokio = { version = "1.33.0", features = ["full"] }
+
+[[bin]]
+name = "brag"
+path = "src/main.rs"
