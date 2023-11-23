@@ -1,9 +1,10 @@
 # ripissue drafts
 
+## roadmap
+
+- command to clone repository
+  - https://docs.rs/cmd_lib/latest/cmd_lib/
 - toml config
-  - all repositories
-    - which branch
-  - all contributors (e-mail, or name)
   - load ssh-agent (keychain as a dependency)
   - clone repositories
   - update repos routine (push)
