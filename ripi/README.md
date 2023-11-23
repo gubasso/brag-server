@@ -3,6 +3,8 @@
 ## roadmap
 
 - document keychain as a dependency, if ssh-agent is needed (server setup)
+- https://wiki.archlinux.org/title/GnuPG#gpg-agent
+- [funtoo / keychain - Suggest alternatives (use gpg-agent systemd unit) #138](https://github.com/funtoo/keychain/issues/138)
 - [x] command_to_clone_repository
 
 - toml config
