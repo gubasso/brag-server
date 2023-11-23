@@ -1,5 +1,29 @@
+use std::{fs::read_to_string, path::PathBuf};
+
+use serde::Deserialize;
+
+#[derive(Deserialize, Debug)]
+#[allow(dead_code)]
+struct Repository {
+    url: String,
+    user: String,
+    branch: String,
+    author_email: String,
+}
+
+#[derive(Deserialize, Debug)]
+#[allow(dead_code)]
+struct Config {
+    repositories: Vec<Repository>,
+}
+
 #[tokio::main]
 async fn main() {
+    let fpath = PathBuf::from("samples/brag-server.toml");
+    let str = read_to_string(fpath).unwrap();
+    let toml: Config = toml::from_str(&str).unwrap();
+    dbg!(toml);
+
     // let app = Router::new()
     //     .route("/", get(handler))
     //     .nest("/error", api_error());

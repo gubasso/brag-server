@@ -1,0 +1,11 @@
+[[repositories]]
+url = "https://github.com/launchbadge/sqlx"
+user = "gubasso"
+branch = "master"
+author_email = "gubasso@eambar.net"
+
+[[repositories]]
+url = "https://github.com/gubasso/ripissue"
+user = "gubasso"
+branch = "develop"
+author_email = "gubasso@eambar.net"

@@ -1,0 +1,16 @@
+#!/bin/sh
+# curl -v -X POST -H "Content-Type: application/json" -d @"./samples/message.json" 127.0.0.1:3000/mirror_body_json
+# curl -v -H "Content-Type: application/json" -d @"./samples/message.json" 127.0.0.1:3000/mirror_body_json
+# curl 127.0.0.1:3000/path_variables/3452342
+# echo ""
+# curl 127.0.0.1:3000/path_variables/69
+# echo ""
+# curl 127.0.0.1:3000/path_variables/myeggs
+# curl -v "127.0.0.1:3000/query_params?id=3&name=$(urlencode 'Guga Boy')&message=$(urlencode 'Hello People!')"
+# curl -v 127.0.0.1:3000/get_json
+# curl -v -H "Content-Type: application/json" -d @"./samples/val_data.json" 127.0.0.1:3000/validate_data
+# curl -v -X POST -H "Content-Type: application/json" -d @"./samples/create_task.json" 127.0.0.1:3000/tasks
+# curl 127.0.0.1:3000/tasks | jq | bat -l json
+# curl -v -G -d 'priority=A' 127.0.0.1:3000/tasks
+curl -G -d 'priority=NULL' 127.0.0.1:3000/tasks | jq | bat -l json
+curl -G 127.0.0.1:3000/tasks | jq | bat -l json

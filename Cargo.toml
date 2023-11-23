@@ -20,9 +20,22 @@ allow-branch = ["master","staging", "develop"]
 [dependencies]
 anyhow = "1.0.75"
 axum = "0.6.20"
-listenfd = "1.0.1"
 serde = { version = "1.0.192", features = ["derive"] }
 tokio = { version = "1.33.0", features = ["full"] }
+tower-http = { version = "0.4.4", features = ["cors"] }
+toml = "0.8.8"
+
+[dependencies.sqlx]
+version = "0.7.2"
+features = [
+    "runtime-tokio",
+    "tls-rustls",
+    "json",
+    "postgres",
+    "macros",
+    "migrate",
+    "chrono"
+]
 
 [[bin]]
 name = "brag"

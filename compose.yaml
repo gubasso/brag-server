@@ -1,0 +1,25 @@
+services:
+  db:
+    image: "postgres:${POSTGRES_VERSION}"
+    restart: always
+    volumes:
+      - ${DATA_PATH}:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./entrypoint.sh:/usr/local/bin/entrypoint.sh
+    entrypoint: ["/usr/local/bin/entrypoint.sh"]
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_DB
+    healthcheck:
+      test: psql -U ${POSTGRES_USER} -q -d ${POSTGRES_DB} -c "SELECT 'ready';"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    secrets:
+      - postgres_password
+secrets:
+  postgres_password:
+    environment: "POSTGRES_PASSWORD"

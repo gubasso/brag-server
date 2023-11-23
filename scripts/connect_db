@@ -1,0 +1,4 @@
+#!/bin/sh
+. ./envs/db.env
+# psql "${DATABASE_URL}" -c "SELECT 'ready';"
+psql "${DATABASE_URL}"
