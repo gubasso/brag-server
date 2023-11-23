@@ -2,8 +2,8 @@
 
 ## roadmap
 
-- command to clone repository
-  - https://docs.rs/cmd_lib/latest/cmd_lib/
+- [x] command_to_clone_repository
+
 - toml config
   - load ssh-agent (keychain as a dependency)
   - clone repositories
@@ -15,3 +15,5 @@
   - systemctl inside rust?
 - server up, serving routes and repo updates routines
 - Follow examples at: https://github.com/tokio-rs/axum/tree/main/examples
+
+- needs to be authenticated (e.g. ssh-agent) if is needed for git clone. This program will not handle this.
