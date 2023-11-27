@@ -1,0 +1,62 @@
+[
+    {
+        "avatar_url": null,
+        "created_at": "2021-10-20T17:56:52.337Z",
+        "default_branch": "main",
+        "description": "",
+        "forks_count": 0,
+        "http_url_to_repo": "https://gitlab.com/gubasso/resume.git",
+        "id": 30620973,
+        "last_activity_at": "2021-10-20T22:14:56.249Z",
+        "name": "resume",
+        "name_with_namespace": "Gustavo Basso / resume",
+        "namespace": {
+            "avatar_url": "https://secure.gravatar.com/avatar/dc949028bc89d35f3663d7bac29e6cba?s=80&d=identicon",
+            "full_path": "gubasso",
+            "id": 51298,
+            "kind": "user",
+            "name": "Gustavo Basso",
+            "parent_id": null,
+            "path": "gubasso",
+            "web_url": "https://gitlab.com/gubasso"
+        },
+        "path": "resume",
+        "path_with_namespace": "gubasso/resume",
+        "readme_url": "https://gitlab.com/gubasso/resume/-/blob/main/README.md",
+        "ssh_url_to_repo": "git@gitlab.com:gubasso/resume.git",
+        "star_count": 0,
+        "tag_list": [],
+        "topics": [],
+        "web_url": "https://gitlab.com/gubasso/resume"
+    },
+    {
+        "avatar_url": "https://gitlab.com/uploads/-/system/project/avatar/1478163/gitlab-logo-square.png",
+        "created_at": "2016-08-03T19:46:08.376Z",
+        "default_branch": "master",
+        "description": "Version Control on your Server. See https://gitlab.com/gitlab-org/gitlab-ce and the README for more information",
+        "forks_count": 0,
+        "http_url_to_repo": "https://gitlab.com/gubasso/gitlab-ce.git",
+        "id": 1478163,
+        "last_activity_at": "2016-08-03T19:46:10.420Z",
+        "name": "GitLab Community Edition",
+        "name_with_namespace": "Gustavo Basso / GitLab Community Edition",
+        "namespace": {
+            "avatar_url": "https://secure.gravatar.com/avatar/dc949028bc89d35f3663d7bac29e6cba?s=80&d=identicon",
+            "full_path": "gubasso",
+            "id": 51298,
+            "kind": "user",
+            "name": "Gustavo Basso",
+            "parent_id": null,
+            "path": "gubasso",
+            "web_url": "https://gitlab.com/gubasso"
+        },
+        "path": "gitlab-ce",
+        "path_with_namespace": "gubasso/gitlab-ce",
+        "readme_url": "https://gitlab.com/gubasso/gitlab-ce/-/blob/master/README.md",
+        "ssh_url_to_repo": "git@gitlab.com:gubasso/gitlab-ce.git",
+        "star_count": 0,
+        "tag_list": [],
+        "topics": [],
+        "web_url": "https://gitlab.com/gubasso/gitlab-ce"
+    }
+]

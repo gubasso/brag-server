@@ -1,11 +1,14 @@
-[[repositories]]
-url = "https://github.com/launchbadge/sqlx"
-user = "gubasso"
-branch = "master"
-author_email = "gubasso@eambar.net"
+branches = [ "master", "develop" ]
+author_emails = [ "gubasso@eambar.net", "gubasso@cwnt.io" ]
 
-[[repositories]]
-url = "https://github.com/gubasso/ripissue"
+[[hosts]]
+host = "Gitlab"
 user = "gubasso"
-branch = "develop"
-author_email = "gubasso@eambar.net"
+
+[[hosts]]
+host = "github"
+user = "gubasso"
+
+[[hosts]]
+host = "github"
+user = "cwnt-io"

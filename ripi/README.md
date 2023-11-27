@@ -2,6 +2,9 @@
 
 ## roadmap
 
+- [x] get all pub repos
+  - [x] api requests
+- [x] cloning repositories
 - [x] server config with keychain
 - [x] document keychain as a dependency, if ssh-agent is needed (server setup)
   - https://wiki.archlinux.org/title/GnuPG#gpg-agent
@@ -9,7 +12,6 @@
 - [x] command_to_clone_repository
 
 - toml config
-  - clone repositories
   - update repos routine (push)
   - from repo to json
   - filter and aggregate data
