@@ -11,9 +11,12 @@
   - [funtoo / keychain - Suggest alternatives (use gpg-agent systemd unit) #138](https://github.com/funtoo/keychain/issues/138)
 - [x] command_to_clone_repository
 
+- save everything in db
+- endpoints reflect functions of already implemented mergestat
+- routine to update repos periodically
+
 - toml config
   - update repos routine (push)
-  - from repo to json
   - filter and aggregate data
   - save to db
 - sqlx migration details: https://docs.rs/sqlx/latest/sqlx/macro.migrate.html

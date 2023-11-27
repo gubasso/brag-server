@@ -6,7 +6,7 @@ use std::{
     str::FromStr,
 };
 
-use cmd_lib::run_cmd;
+use cmd_lib::{run_cmd, run_fun};
 use reqwest::{header::USER_AGENT, Client};
 use serde::{Deserialize, Deserializer};
 use serde_json::Value;
@@ -135,8 +135,25 @@ async fn main() {
         urls.extend(host_urls);
     }
     for (url, full_name) in &urls {
+        let mut sql = "select count(*) from commits ".to_string();
         let full_path = repos_path.join(full_name);
-        run_cmd!(git clone $url $full_path).unwrap();
+        if !full_path.is_dir() {
+            run_cmd!(git clone $url $full_path).unwrap();
+        }
+        if !toml.author_emails.is_empty() {
+            let mut where_clause = "WHERE author_email IN (".to_string();
+            for email in &toml.author_emails {
+                where_clause.push_str(&format!("'{}',", email));
+            }
+            where_clause.pop();
+            where_clause.push(')');
+            sql.push_str(&where_clause);
+        }
+        dbg!(&sql);
+        let j = run_fun!(docker run -v $full_path:/repo mergestat/mergestat $sql --format json)
+            .unwrap();
+        let js: Value = serde_json::from_str(&j).unwrap();
+        dbg!(js);
     }
 
     // let app = Router::new()
