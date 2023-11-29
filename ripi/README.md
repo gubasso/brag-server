@@ -2,9 +2,10 @@
 
 ## roadmap
 
-- save everything in db
+- setup axum structure
 - endpoints reflect functions of already implemented mergestat
 - routine to update repos periodically
+- [x] save everything in db
 - [x] get all pub repos
   - [x] api requests
 - [x] cloning repositories

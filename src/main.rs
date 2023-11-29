@@ -6,9 +6,6 @@ mod utils;
 use std::{env, error::Error};
 
 use queries::insert_commits_to_db;
-// use chrono::{DateTime, Utc};
-// use cmd_lib::{run_cmd, run_fun};
-// use serde::Deserialize;
 use tokio::fs::create_dir_all;
 use types::repositories::Repositories;
 use utils::{load_config, repos_base_path};
