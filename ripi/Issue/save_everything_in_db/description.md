@@ -1,8 +1,7 @@
 # save_everything_in_db (Issue)
 
 - [x] populate db with initial repositories commits data
-- [ ] organize code
-  - [ ] clone repositories // TODO
-  - [ ] Structure error handling
-
-(end)
+- [x] organize code
+  - [x] save to db
+  - [x] clone repositories // TODO
+  - [x] Structure error handling

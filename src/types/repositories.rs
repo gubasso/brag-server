@@ -1,21 +1,31 @@
-use std::{error::Error, path::PathBuf};
+use std::{
+    error::Error,
+    path::{Path, PathBuf},
+    slice::Iter,
+};
 
+use cmd_lib::{run_cmd, run_fun};
 use reqwest::{header::USER_AGENT, Client};
 use serde_json::Value;
 use url::Url;
 
 use crate::{utils::repos_base_path, CARGO_PKG_VERSION};
 
-use super::git_hosts::{GitHost, Host};
+use super::{
+    commits::Commit,
+    git_hosts::{GitHost, Host},
+};
 
 #[derive(Debug)]
 #[allow(unused)]
 pub struct Repo {
-    url: Url,
+    pub url: Url,
     user: String,
     name: String,
     host: GitHost,
     path: PathBuf,
+    pub commits: Vec<Commit>,
+    pub user_repo_name: String,
 }
 
 fn get_value(obj: &Value, key: &str) -> Result<String, Box<dyn Error>> {
@@ -29,15 +39,30 @@ impl Repo {
         let url = Url::parse(&url_str)?;
         let user_repo_name = get_value(obj, &host.host.user_repo_name_key())?;
         let mut path = repos_base_path();
-        path.push(user_repo_name);
+        path.push(&user_repo_name);
         Ok(Self {
             host: host.host,
             user: host.user.clone(),
             name,
+            commits: get_commits(&path, &url)?,
             url,
             path,
+            user_repo_name,
         })
     }
+}
+
+fn get_commits(path: &Path, url: &Url) -> Result<Vec<Commit>, Box<dyn Error>> {
+    if !path.is_dir() {
+        let url = url.as_str();
+        let path = path.to_str().unwrap();
+        run_cmd!(git clone $url $path)?;
+    }
+    let path = path.to_str().expect("repo-commits-path");
+    let sql = "select * from commits".to_string();
+    let json_str = run_fun!(docker run -v $path:/repo mergestat/mergestat $sql --format json)?;
+    let commits: Vec<Commit> = serde_json::from_str(&json_str)?;
+    Ok(commits)
 }
 
 #[derive(Debug)]
@@ -62,5 +87,8 @@ impl Repositories {
             }
         }
         Ok(Self(repos))
+    }
+    pub fn iter(&self) -> Iter<'_, Repo> {
+        self.0.iter()
     }
 }
