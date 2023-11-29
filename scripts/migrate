@@ -1,0 +1,4 @@
+#!/bin/sh
+. ./envs/db.env
+sqlx migrate revert
+sqlx migrate run

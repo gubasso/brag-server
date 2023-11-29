@@ -1,160 +1,107 @@
-use core::fmt;
-use std::{
-    env,
-    fs::read_to_string,
-    path::{Path, PathBuf},
-    str::FromStr,
-};
+mod datetime_deserializer;
+mod types;
+mod utils;
 
-use cmd_lib::{run_cmd, run_fun};
-use reqwest::{header::USER_AGENT, Client};
-use serde::{Deserialize, Deserializer};
-use serde_json::Value;
+use std::{env, error::Error};
+
+// use chrono::{DateTime, Utc};
+// use cmd_lib::{run_cmd, run_fun};
+// use serde::Deserialize;
 use tokio::fs::create_dir_all;
+use types::repositories::Repositories;
+use utils::{load_config, repos_base_path};
 
-#[derive(Deserialize, Debug)]
-#[allow(dead_code)]
-struct Host {
-    #[serde(deserialize_with = "deserialize_githost")]
-    host: GitHosts,
-    user: String,
-}
+// #[derive(Deserialize, Debug)]
+// struct Commit {
+//     hash: String,
+//     author_email: String,
+//     author_name: String,
+//     #[serde(with = "datetime_deserializer")]
+//     author_when: DateTime<Utc>,
+//     committer_email: String,
+//     committer_name: String,
+//     #[serde(with = "datetime_deserializer")]
+//     committer_when: DateTime<Utc>,
+//     message: String,
+//     parents: i32,
+// }
 
-#[derive(Deserialize, Debug)]
-enum GitHosts {
-    Github,
-    Gitlab,
-}
-
-#[derive(Debug)]
-struct GitHostsParseError {
-    value: String,
-}
-
-impl fmt::Display for GitHostsParseError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "Invalid host: {}", self.value)
-    }
-}
-
-impl FromStr for GitHosts {
-    type Err = GitHostsParseError;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        match s.to_lowercase().as_str() {
-            "github" => Ok(GitHosts::Github),
-            "gitlab" => Ok(GitHosts::Gitlab),
-            _ => Err(GitHostsParseError {
-                value: s.to_string(),
-            }),
-        }
-    }
-}
-
-fn deserialize_githost<'de, D>(deserializer: D) -> Result<GitHosts, D::Error>
-where
-    D: Deserializer<'de>,
-{
-    let s = String::deserialize(deserializer)?;
-    GitHosts::from_str(&s).map_err(serde::de::Error::custom)
-}
-
-#[derive(Deserialize, Debug)]
-#[allow(dead_code)]
-struct Config {
-    branches: Vec<String>,
-    author_emails: Vec<String>,
-    hosts: Vec<Host>,
-}
-
-async fn get_repos_url(host: &GitHosts, user: &str) -> Vec<(String, String)> {
-    let req_url = match host {
-        GitHosts::Github => format!("https://api.github.com/users/{}/repos", user),
-        GitHosts::Gitlab => format!("https://gitlab.com/api/v4/users/{}/projects", user),
-    };
-    let version = env!("CARGO_PKG_VERSION");
-    let client = Client::new();
-    let json_str = client
-        .get(req_url)
-        .header(USER_AGENT, format!("brag-server/{}", version))
-        .send()
-        .await
-        .expect("req fail")
-        .text()
-        .await
-        .expect("parse body error");
-    let json: Value = serde_json::from_str(&json_str).expect("fail parse json");
-    let mut urls = vec![];
-    match host {
-        GitHosts::Github => {
-            for repo in json.as_array().unwrap() {
-                let tup = get_repo_url_n_full_name(repo, "full_name", "clone_url");
-                urls.push(tup);
-            }
-        }
-        GitHosts::Gitlab => {
-            for repo in json.as_array().unwrap() {
-                let tup = get_repo_url_n_full_name(repo, "path_with_namespace", "http_url_to_repo");
-                urls.push(tup);
-            }
-        }
-    };
-    urls
-}
-
-fn get_repo_url_n_full_name(
-    repo_obj: &Value,
-    key_full_name: &str,
-    key_url: &str,
-) -> (String, String) {
-    let repo_obj = repo_obj.as_object().unwrap();
-    let full_name = repo_obj
-        .get(key_full_name)
-        .unwrap()
-        .as_str()
-        .unwrap()
-        .to_owned();
-    let url = repo_obj.get(key_url).unwrap().as_str().unwrap().to_owned();
-    (url, full_name)
-}
+const HOME: &str = env!("HOME");
+const REPOS_BASE_PATH: &str = "/.local/share/brag-server/repos";
+const CARGO_PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[tokio::main]
-async fn main() {
-    let home = env::var("HOME").expect("HOME env var must be set");
-    let repos_base = format!("{}/.local/share/brag-server/repos", home);
-    let repos_path = Path::new(&repos_base);
-    create_dir_all(repos_path)
-        .await
-        .expect("Unable to create repos base dir");
-    let fpath = PathBuf::from("samples/brag-server.toml");
-    let str = read_to_string(fpath).unwrap();
-    let toml: Config = toml::from_str(&str).unwrap();
-    let mut urls = vec![];
-    for acc in &toml.hosts {
-        let host_urls = get_repos_url(&acc.host, &acc.user).await;
-        urls.extend(host_urls);
-    }
-    for (url, full_name) in &urls {
-        let mut sql = "select count(*) from commits ".to_string();
-        let full_path = repos_path.join(full_name);
-        if !full_path.is_dir() {
-            run_cmd!(git clone $url $full_path).unwrap();
-        }
-        if !toml.author_emails.is_empty() {
-            let mut where_clause = "WHERE author_email IN (".to_string();
-            for email in &toml.author_emails {
-                where_clause.push_str(&format!("'{}',", email));
-            }
-            where_clause.pop();
-            where_clause.push(')');
-            sql.push_str(&where_clause);
-        }
-        dbg!(&sql);
-        let j = run_fun!(docker run -v $full_path:/repo mergestat/mergestat $sql --format json)
-            .unwrap();
-        let js: Value = serde_json::from_str(&j).unwrap();
-        dbg!(js);
-    }
+async fn main() -> Result<(), Box<dyn Error>> {
+    let config = load_config().await?;
+
+    // let db_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    // let pool = sqlx::postgres::PgPoolOptions::new()
+    //     .max_connections(20)
+    //     .connect(&db_url)
+    //     .await
+    //     .expect("failed to connect to DATABASE_URL");
+
+    let repos_path = repos_base_path();
+    create_dir_all(&repos_path).await?;
+    let repositories = Repositories::from(&config.hosts).await?;
+    // TODO
+    dbg!(repositories);
+
+    // for (url, full_name) in &urls {
+    //     let sql = "select * from commits".to_string();
+    //     let full_path = repos_path.join(full_name);
+    //     if !full_path.is_dir() {
+    //         run_cmd!(git clone $url $full_path).unwrap();
+    //     }
+    //     dbg!(&url);
+    //     dbg!(&full_name);
+    //     dbg!(&sql);
+    //     let json_str = run_fun!(docker run -v $full_path:/repo mergestat/mergestat $sql --format json)
+    //         .unwrap();
+    //     let commits: Vec<Commit> = serde_json::from_str(&json_str).unwrap();
+    //     let insert_qry = r"
+    //     INSERT INTO commits (
+    //         repo,
+    //         hash,
+    //         author_email,
+    //         author_name,
+    //         author_when,
+    //         committer_email,
+    //         committer_name,
+    //         committer_when,
+    //         message,
+    //         parents
+    //     )
+    //     VALUES (
+    //         $1,
+    //         $2,
+    //         $3,
+    //         $4,
+    //         $5,
+    //         $6,
+    //         $7,
+    //         $8,
+    //         $9,
+    //         $10
+    //     )
+    //     ";
+    //     for commit in &commits {
+    //         sqlx::query(insert_qry)
+    //             .bind(full_name)
+    //             .bind(&commit.hash)
+    //             .bind(&commit.author_email)
+    //             .bind(&commit.author_name)
+    //             .bind(commit.author_when)
+    //             .bind(&commit.committer_email)
+    //             .bind(&commit.committer_name)
+    //             .bind(commit.committer_when)
+    //             .bind(&commit.message)
+    //             .bind(commit.parents)
+    //             .execute(&pool)
+    //             .await
+    //             .expect("failed to save commit in db");
+    //     }
+    // }
 
     // let app = Router::new()
     //     .route("/", get(handler))
@@ -167,4 +114,5 @@ async fn main() {
     // };
     // println!("listening on {}", addr);
     // server.serve(app.into_make_service()).await.unwrap();
+    Ok(())
 }
