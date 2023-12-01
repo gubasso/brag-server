@@ -18,8 +18,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
     create_dir_all(&repos_path).await?;
     let cors = CorsLayer::new().allow_origin(Any);
     let app = Router::new()
-        .route("/", get(repos))
         .route("/count", get(count))
+        .route("/", get(repos))
         .with_state(pool)
         .layer(cors);
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));

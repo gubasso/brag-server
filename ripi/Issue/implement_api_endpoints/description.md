@@ -5,6 +5,7 @@
 - [x] `/`: array of repositories
 - [ ] review axum middleware
 - [x] `/count`: count commits for each repo[^1]
+  - [ ] get enum utils from ripissue: enum to lowercase
   - `/count?by=day`
   - `/count?by=week`
   - `/count?by=month&author_email=gubasso@cwnt.io`

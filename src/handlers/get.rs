@@ -1,7 +1,9 @@
+use axum::extract::Query;
 use axum::http::StatusCode;
 use axum::{extract::State, Json};
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, Row};
+use validator::Validate;
 
 use crate::types::repositories::RepoResp;
 
@@ -24,7 +26,29 @@ pub struct CountResp {
     count: i64,
 }
 
-pub async fn count(State(pool): State<PgPool>) -> Result<Json<Vec<CountResp>>, StatusCode> {
+#[derive(Debug, Deserialize)]
+enum Interval {
+    Day,
+    Week,
+    Month,
+}
+
+#[derive(Debug, Deserialize, Validate)]
+pub struct QueryFilterCount {
+    by: Option<Interval>,
+    #[validate(email)]
+    author_email: Option<String>,
+}
+
+pub async fn count(
+    State(pool): State<PgPool>,
+    Query(query): Query<QueryFilterCount>,
+) -> Result<Json<Vec<CountResp>>, StatusCode> {
+    query
+        .validate()
+        .map_err(|_| StatusCode::UNPROCESSABLE_ENTITY)?;
+    println!("{:?}", query);
+    let _by = query.by;
     let q = r"
         SELECT repo, COUNT(*)
         FROM commits
