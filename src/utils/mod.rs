@@ -1,7 +1,10 @@
 use std::{error::Error, path::PathBuf};
 use tokio::fs::read_to_string;
 
-use crate::{types::config_toml::Config, HOME, REPOS_BASE_PATH};
+use crate::{
+    global_vars::{HOME, REPOS_BASE_PATH},
+    types::config_toml::Config,
+};
 
 pub async fn load_config() -> Result<Config, Box<dyn Error>> {
     let config_file = PathBuf::from("samples/brag-server.toml");

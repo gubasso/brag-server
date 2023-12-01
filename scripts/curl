@@ -12,5 +12,5 @@
 # curl -v -X POST -H "Content-Type: application/json" -d @"./samples/create_task.json" 127.0.0.1:3000/tasks
 # curl 127.0.0.1:3000/tasks | jq | bat -l json
 # curl -v -G -d 'priority=A' 127.0.0.1:3000/tasks
-curl -G -d 'priority=NULL' 127.0.0.1:3000/tasks | jq | bat -l json
-curl -G 127.0.0.1:3000/tasks | jq | bat -l json
+# curl -G -d 'priority=NULL' 127.0.0.1:3000/tasks | jq | bat -l json
+curl 127.0.0.1:3000/count

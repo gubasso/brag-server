@@ -3,6 +3,7 @@
 ## roadmap
 
 - endpoints reflect functions of already implemented mergestat
+- implement migrate! to main, to reset db for a new binary run
 - routine to update repos periodically
 - [x] setup axum structure
 - [x] save everything in db

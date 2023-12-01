@@ -1,0 +1,6 @@
+#!/bin/sh
+clear
+. ./envs/db.env
+. ./scripts/migrate
+cargo run --bin load_db
+cargo watch -q -c -w src -x "run --bin brag-server"

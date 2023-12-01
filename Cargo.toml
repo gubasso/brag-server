@@ -43,5 +43,5 @@ features = [
 ]
 
 [[bin]]
-name = "brag"
-path = "src/main.rs"
+name = "load_db"
+path = "src/bin/load_db.rs"

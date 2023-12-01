@@ -6,10 +6,11 @@ use std::{
 
 use cmd_lib::{run_cmd, run_fun};
 use reqwest::{header::USER_AGENT, Client};
+use serde::Serialize;
 use serde_json::Value;
 use url::Url;
 
-use crate::{utils::repos_base_path, CARGO_PKG_VERSION};
+use crate::{global_vars::CARGO_PKG_VERSION, utils::repos_base_path};
 
 use super::{
     commits::Commit,
@@ -90,5 +91,26 @@ impl Repositories {
     }
     pub fn iter(&self) -> Iter<'_, Repo> {
         self.0.iter()
+    }
+}
+
+#[derive(Serialize)]
+pub struct RepoResp {
+    name: String,
+    user: String,
+    full_name: String,
+}
+
+impl RepoResp {
+    pub fn from_full_name(full_name: &str) -> Self {
+        let v: Vec<&str> = full_name.split('/').collect();
+        let full_name = full_name.to_owned();
+        let user = v.first().unwrap_or(&"").to_string();
+        let name = v.get(1).unwrap_or(&"").to_string();
+        Self {
+            full_name,
+            user,
+            name,
+        }
     }
 }
