@@ -1,6 +1,6 @@
 use core::fmt;
-use serde::{Deserialize, Deserializer};
-use std::str::FromStr;
+use serde::{de::Error, Deserialize, Deserializer};
+use std::{fmt::Display, str::FromStr};
 use url::Url;
 
 #[derive(Deserialize, Debug, Copy, Clone)]
@@ -48,41 +48,55 @@ impl GitHost {
 }
 
 #[derive(Debug)]
-pub struct GitHostsParseError {
-    value: String,
+pub struct EnumParseError {
+    pub value: String,
 }
 
-impl fmt::Display for GitHostsParseError {
+impl fmt::Display for EnumParseError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Invalid host: {}", self.value)
     }
 }
 
 impl FromStr for GitHost {
-    type Err = GitHostsParseError;
+    type Err = EnumParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s.to_lowercase().as_str() {
             "github" => Ok(GitHost::Github),
             "gitlab" => Ok(GitHost::Gitlab),
-            _ => Err(GitHostsParseError {
+            _ => Err(EnumParseError {
                 value: s.to_string(),
             }),
         }
     }
 }
 
-fn deserialize_githost<'de, D>(deserializer: D) -> Result<GitHost, D::Error>
+pub fn deserializer_enum<'de, D, E>(deserializer: D) -> Result<E, D::Error>
 where
     D: Deserializer<'de>,
+    E: FromStr + Deserialize<'de>,
+    <E as FromStr>::Err: Display,
 {
     let s = String::deserialize(deserializer)?;
-    GitHost::from_str(&s).map_err(serde::de::Error::custom)
+    E::from_str(&s).map_err(serde::de::Error::custom)
+}
+
+pub fn deserializer_optional_enum<'de, D, E>(deserializer: D) -> Result<Option<E>, D::Error>
+where
+    D: Deserializer<'de>,
+    E: FromStr + Deserialize<'de>,
+    <E as FromStr>::Err: Display,
+{
+    let option = Option::<String>::deserialize(deserializer)?;
+    option.map_or(Ok(None), |s| {
+        E::from_str(&s).map(Some).map_err(Error::custom)
+    })
 }
 
 #[derive(Deserialize, Debug)]
 pub struct Host {
-    #[serde(deserialize_with = "deserialize_githost")]
+    #[serde(deserialize_with = "deserializer_enum")]
     pub host: GitHost,
     pub user: String,
 }

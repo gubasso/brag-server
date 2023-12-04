@@ -3,12 +3,13 @@
 **endpoints**
 
 - [x] `/`: array of repositories
-- [ ] review axum middleware
+- [x] review axum middleware
 - [x] `/count`: count commits for each repo[^1]
-  - [ ] get enum utils from ripissue: enum to lowercase
+  - [x] enum filter query-string lower case
   - `/count?by=day`
   - `/count?by=week`
   - `/count?by=month&author_email=gubasso@cwnt.io`
+  - [ ] implement the req query to the sql query
 - `/<host>`: array of repos
 - `/<host>/<user>`: array of repos
 - `/<host>/<user>/<name>`: array of commits of that repo[^1]
