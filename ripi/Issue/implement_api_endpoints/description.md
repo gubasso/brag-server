@@ -11,8 +11,4 @@
   - `/count?by=month&author_email=gubasso@cwnt.io`
   - `/count?full_name=gubasso/dwm`
   - [x] implement the req query to the sql query
-- `/<host>`: array of repos
-- `/<host>/<user>`: array of repos
-- `/<host>/<user>/<name>`: array of commits of that repo[^1]
-
-[^1]: query string `author_email`: filter commits
+  - [x] `/count?author_email=gubasso`

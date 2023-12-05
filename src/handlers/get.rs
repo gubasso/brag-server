@@ -60,7 +60,28 @@ pub struct QueryFilterCount {
     by: Option<Interval>,
     #[validate(email)]
     author_email: Option<String>,
-    repo_full_name: Option<String>,
+    repo: Option<String>,
+}
+
+fn where_filter(filters: Vec<(&str, &Option<String>)>) -> Option<String> {
+    if filters.iter().all(|(_, filter)| filter.is_none()) {
+        return None;
+    }
+    let mut where_str = r"
+        WHERE"
+        .to_string();
+    for (field, filter) in filters.iter() {
+        if let Some(f) = filter {
+            where_str.push_str(&format!(
+                r"
+                {} = '{}' AND",
+                field, f
+            ));
+        }
+    }
+    where_str.truncate(where_str.len() - 3);
+    dbg!(&where_str);
+    Some(where_str)
 }
 
 fn count_qry_builder(qs_opt: &Option<QueryFilterCount>) -> Result<String, StatusCode> {
@@ -99,17 +120,13 @@ fn count_qry_builder(qs_opt: &Option<QueryFilterCount>) -> Result<String, Status
         );
     }
     q.push_str(from_commits);
-    if let Some(full_name) = &qs.repo_full_name {
-        let repo_filter_str = format!(
-            r"
-            WHERE
-                repo = '{}'
-        ",
-            full_name
-        );
-        q.push_str(&repo_filter_str);
+    let where_vec = vec![("repo", &qs.repo), ("author_email", &qs.author_email)];
+    let where_opt = where_filter(where_vec);
+    if let Some(where_qry) = where_opt {
+        q.push_str(&where_qry);
     }
     q.push_str(&group_by);
+    dbg!(&q);
     Ok(q)
 }
 
