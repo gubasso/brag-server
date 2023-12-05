@@ -1,3 +1,5 @@
 #!/bin/sh
+clear
 . ./envs/db.env
-clear; cargo run --bin brag-server
+. ./scripts/migrate
+cargo run --bin load_db

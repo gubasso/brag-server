@@ -1,8 +1,4 @@
-use std::{
-    error::Error,
-    path::{Path, PathBuf},
-    slice::Iter,
-};
+use std::{error::Error, path::PathBuf, slice::Iter};
 
 use cmd_lib::{run_cmd, run_fun};
 use reqwest::{header::USER_AGENT, Client};
@@ -45,25 +41,37 @@ impl Repo {
             host: host.host,
             user: host.user.clone(),
             name,
-            commits: get_commits(&path, &url)?,
+            commits: Vec::default(),
             url,
             path,
             user_repo_name,
         })
     }
-}
-
-fn get_commits(path: &Path, url: &Url) -> Result<Vec<Commit>, Box<dyn Error>> {
-    if !path.is_dir() {
-        let url = url.as_str();
-        let path = path.to_str().unwrap();
-        run_cmd!(git clone $url $path)?;
+    pub fn set_commits(&mut self) -> Result<(), Box<dyn Error>> {
+        if !self.path.is_dir() {
+            let url = self.url.as_str();
+            let path = self.path.to_str().unwrap();
+            println!("# Cloning: {}\nTo: {}", url, path);
+            run_cmd!(git clone $url $path)?;
+            println!("# Cloned: {}", path);
+        }
+        let git_path = self.path.join(".git");
+        let path_str = self.path.to_str().unwrap();
+        let git_path_str = git_path.to_str().unwrap();
+        let wt = format!("--work-tree={}", path_str);
+        let gd = format!("--git-dir={}", git_path_str);
+        let curr_branch = run_fun!(git $wt $gd rev-parse --abbrev-ref HEAD)?;
+        println!(
+            "# Pulling!\ngit_path: {}\n - current_branch: {}",
+            git_path_str, curr_branch
+        );
+        run_cmd!(git $wt $gd pull origin $curr_branch)?;
+        let sql = "select * from commits".to_string();
+        let json_str =
+            run_fun!(docker run -v $path_str:/repo mergestat/mergestat $sql --format json)?;
+        self.commits = serde_json::from_str(&json_str)?;
+        Ok(())
     }
-    let path = path.to_str().expect("repo-commits-path");
-    let sql = "select * from commits".to_string();
-    let json_str = run_fun!(docker run -v $path:/repo mergestat/mergestat $sql --format json)?;
-    let commits: Vec<Commit> = serde_json::from_str(&json_str)?;
-    Ok(commits)
 }
 
 #[derive(Debug)]
@@ -84,13 +92,21 @@ impl Repositories {
                 .await?;
             let json_repos: Vec<Value> = serde_json::from_str(&json_str)?;
             for jrepo in &json_repos {
-                repos.push(Repo::from(host, jrepo)?);
+                let mut repo = Repo::from(host, jrepo)?;
+                repo.set_commits()?;
+                repos.push(repo);
             }
         }
         Ok(Self(repos))
     }
     pub fn iter(&self) -> Iter<'_, Repo> {
         self.0.iter()
+    }
+    pub fn set_all_commits(&mut self) -> Result<(), Box<dyn Error>> {
+        for repo in self.0.iter_mut() {
+            repo.set_commits()?;
+        }
+        Ok(())
     }
 }
 

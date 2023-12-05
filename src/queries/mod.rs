@@ -17,17 +17,23 @@ INSERT INTO commits (
     message,
     parents
 )
-VALUES (
-    $1,
-    $2,
-    $3,
-    $4,
-    $5,
-    $6,
-    $7,
-    $8,
-    $9,
-    $10
+SELECT * FROM (
+    SELECT
+        $1,
+        $2,
+        $3,
+        $4,
+        $5,
+        $6,
+        $7,
+        $8,
+        $9,
+        $10
+) AS tmp
+WHERE NOT EXISTS (
+    SELECT 1 FROM commits WHERE
+        repo = $1 AND
+        hash = $2
 )";
 
 pub async fn insert_commits_to_db(
