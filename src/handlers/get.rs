@@ -3,6 +3,7 @@ use std::str::FromStr;
 use axum::extract::Query;
 use axum::http::StatusCode;
 use axum::{extract::State, Json};
+use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, Row};
 use validator::Validate;
@@ -27,9 +28,11 @@ pub async fn repos(State(pool): State<PgPool>) -> Result<Json<Vec<RepoResp>>, St
 pub struct CountResp {
     repo: RepoResp,
     count: i64,
+    query: Option<QueryFilterCount>,
+    date_agg: Option<DateTime<Utc>>,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy)]
 enum Interval {
     Day,
     Week,
@@ -51,37 +54,84 @@ impl FromStr for Interval {
     }
 }
 
-#[derive(Debug, Deserialize, Validate)]
+#[derive(Debug, Deserialize, Validate, Serialize, Clone)]
 pub struct QueryFilterCount {
     #[serde(deserialize_with = "deserializer_optional_enum")]
     by: Option<Interval>,
     #[validate(email)]
     author_email: Option<String>,
+    repo_full_name: Option<String>,
+}
+
+fn count_qry_builder(qs_opt: &Option<QueryFilterCount>) -> Result<String, StatusCode> {
+    let mut q = r"
+        SELECT
+            repo,
+            COUNT(*)
+    "
+    .to_string();
+    let mut group_by = r"
+        GROUP BY
+            repo
+    "
+    .to_string();
+    let from_commits = r"
+        FROM
+            commits";
+    if qs_opt.is_none() {
+        q.push_str(from_commits);
+        q.push_str(&group_by);
+        return Ok(q);
+    }
+    let qs = qs_opt.as_ref().unwrap();
+    qs.validate()
+        .map_err(|_| StatusCode::UNPROCESSABLE_ENTITY)?;
+    if let Some(interval) = &qs.by {
+        let date_agg_str = format!(
+            r",
+            DATE_TRUNC('{:?}', author_when) AS date_agg",
+            interval
+        );
+        q.push_str(&date_agg_str);
+        group_by.push_str(
+            r",
+            date_agg",
+        );
+    }
+    q.push_str(from_commits);
+    if let Some(full_name) = &qs.repo_full_name {
+        let repo_filter_str = format!(
+            r"
+            WHERE
+                repo = '{}'
+        ",
+            full_name
+        );
+        q.push_str(&repo_filter_str);
+    }
+    q.push_str(&group_by);
+    Ok(q)
 }
 
 pub async fn count(
     State(pool): State<PgPool>,
-    Query(query): Query<QueryFilterCount>,
+    qry_opt: Option<Query<QueryFilterCount>>,
 ) -> Result<Json<Vec<CountResp>>, StatusCode> {
-    query
-        .validate()
-        .map_err(|_| StatusCode::UNPROCESSABLE_ENTITY)?;
-    println!("{:?}", query);
-    let _by = query.by;
-    let q = r"
-        SELECT repo, COUNT(*)
-        FROM commits
-        GROUP BY repo
-    ";
-    let rows = sqlx::query(q)
+    let qry_filter_opt = qry_opt.map(|q| q.0);
+    let rows = sqlx::query(&count_qry_builder(&qry_filter_opt)?)
         .fetch_all(&pool)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
     Ok(Json(
         rows.into_iter()
-            .map(|r| CountResp {
-                repo: RepoResp::from_full_name(r.get("repo")),
-                count: r.get("count"),
+            .map(|r| {
+                let date_agg = r.try_get("date_agg").ok();
+                CountResp {
+                    repo: RepoResp::from_full_name(r.get("repo")),
+                    count: r.get("count"),
+                    query: qry_filter_opt.clone(),
+                    date_agg,
+                }
             })
             .collect(),
     ))

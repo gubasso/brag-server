@@ -14,4 +14,9 @@
 # curl -v -G -d 'priority=A' 127.0.0.1:3000/tasks
 # curl -G -d 'priority=NULL' 127.0.0.1:3000/tasks | jq | bat -l json
 # curl -G -d 'by=day' 127.0.0.1:3000/count
-curl -v -G -d 'by=day' -d 'author_email=gubasso_cwnt.io' 127.0.0.1:3000/count
+# curl -v 127.0.0.1:3000
+curl -v -G \
+    -d 'by=day' \
+    -d 'author_email=gubasso@cwnt.io' \
+    -d 'repo_full_name=gubasso/ripissue' \
+    127.0.0.1:3000/count

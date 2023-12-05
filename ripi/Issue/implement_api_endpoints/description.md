@@ -9,7 +9,8 @@
   - `/count?by=day`
   - `/count?by=week`
   - `/count?by=month&author_email=gubasso@cwnt.io`
-  - [ ] implement the req query to the sql query
+  - `/count?full_name=gubasso/dwm`
+  - [x] implement the req query to the sql query
 - `/<host>`: array of repos
 - `/<host>/<user>`: array of repos
 - `/<host>/<user>/<name>`: array of commits of that repo[^1]
