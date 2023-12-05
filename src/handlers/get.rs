@@ -80,7 +80,6 @@ fn where_filter(filters: Vec<(&str, &Option<String>)>) -> Option<String> {
         }
     }
     where_str.truncate(where_str.len() - 3);
-    dbg!(&where_str);
     Some(where_str)
 }
 
@@ -126,7 +125,6 @@ fn count_qry_builder(qs_opt: &Option<QueryFilterCount>) -> Result<String, Status
         q.push_str(&where_qry);
     }
     q.push_str(&group_by);
-    dbg!(&q);
     Ok(q)
 }
 

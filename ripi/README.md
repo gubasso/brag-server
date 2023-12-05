@@ -2,10 +2,9 @@
 
 ## roadmap
 
-- endpoints reflect functions of already implemented mergestat
-- implement migrate! to main, to reset db for a new binary run
-- routine to update repos periodically
+- [ ] routine to update repos periodically
 - refactor error handling: return errors like python-eve: as http and also as a json with error details
+- [x] implement migrate! to main, to reset db for a new binary run
 - [x] setup axum structure
 - [x] save everything in db
 - [x] get all pub repos
