@@ -22,9 +22,5 @@
 #     127.0.0.1:3000/count
 curl -v -G \
     -d 'by=month' \
-    -d 'author_email=gubasso@cwnt.io' \
-    127.0.0.1:3000/count
-curl -v -G \
-    -d 'by=month' \
     -d 'author_email=gubasso@eambar.net' \
-    127.0.0.1:3000/count
+    127.0.0.1:/count

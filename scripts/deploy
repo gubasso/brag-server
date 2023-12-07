@@ -1,0 +1,18 @@
+#!/bin/sh
+. ./envs/deploy.env
+. ./envs/web-server.env
+. ./envs/db.env
+
+asdf plugin add rust
+asdf install rust $RUST_VERSION
+asdf global rust $RUST_VERSION
+asdf local rust $RUST_VERSION
+
+asdf plugin add python
+asdf install python $PYTHON_VERSION
+asdf global python $PYTHON_VERSION
+asdf local python $PYTHON_VERSION
+
+asdf reshim
+
+docker compose up --wait

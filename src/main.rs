@@ -18,7 +18,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .route("/", get(repos))
         .with_state(pool)
         .layer(cors);
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+    let addr_str = format!("{}:{}", env::var("NET_HOST")?, env::var("API_PORT")?);
+    let addr: SocketAddr = addr_str.parse()?;
     println!("server is up");
     Server::bind(&addr).serve(app.into_make_service()).await?;
     Ok(())

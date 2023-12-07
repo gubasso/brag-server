@@ -1,0 +1,1 @@
+# docker_compose_service_rust_app (Issue)

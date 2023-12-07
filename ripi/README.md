@@ -2,8 +2,26 @@
 
 ## roadmap
 
-- [ ] routine to update repos periodically
-- refactor error handling: return errors like python-eve: as http and also as a json with error details
+- [ ] deploy steps
+  - [x] migrate asdf to script
+    - ignore .tool-versions
+  - compose:
+    - [ ] rust app:
+      - https://www.docker.com/blog/simplify-your-deployments-using-the-rust-official-image/
+    - load-balancer/web-server:
+      - [ ] study caddy youtube
+      - https://www.docker.com/blog/deploying-web-applications-quicker-and-easier-with-caddy-2/
+    - postgresql server
+
+  - container using a ssh-agent
+    - https://www.jamesridgway.co.uk/sharing-an-ssh-agent-between-a-host-machine-and-a-docker-container/
+  
+  - initial server setup (spin up)
+    - systemctl inside rust?
+  - `brag-server` as a docker container (to be deployed with a `docker run` or `docker compose`)
+  - `nginx` as a docker container (`compose`)
+- [x] refactor error handling: return errors like python-eve: as http and also as a json with error details
+- [x] routine to update repos periodically
 - [x] implement migrate! to main, to reset db for a new binary run
 - [x] setup axum structure
 - [x] save everything in db
@@ -15,35 +33,4 @@
   - https://wiki.archlinux.org/title/GnuPG#gpg-agent
   - [funtoo / keychain - Suggest alternatives (use gpg-agent systemd unit) #138](https://github.com/funtoo/keychain/issues/138)
 - [x] command_to_clone_repository
-
-- endpoint filter by user email:
-
-```rs
-if !toml.author_emails.is_empty() {
-    let mut where_clause = "WHERE author_email IN (".to_string();
-    for email in &toml.author_emails {
-        where_clause.push_str(&format!("'{}',", email));
-    }
-    where_clause.pop();
-    where_clause.push(')');
-    sql.push_str(&where_clause);
-}
-```
-
-- toml config
-  - update repos routine (push)
-  - filter and aggregate data
-  - save to db
-- sqlx migration details: https://docs.rs/sqlx/latest/sqlx/macro.migrate.html
-- initial server setup (spin up)
-  - systemctl inside rust?
-- server up, serving routes and repo updates routines
-- Follow examples at: https://github.com/tokio-rs/axum/tree/main/examples
-- `brag-server` as a docker container (to be deployed with a `docker run` or `docker compose`)
-- `nginx` as a docker container (`compose`)
-
-## definitions
-
-- needs to be authenticated (e.g. ssh-agent) if is needed for git clone. This program will not handle this.
-
-
+- [x] endpoint filter by user email:
