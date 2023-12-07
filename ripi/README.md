@@ -3,9 +3,9 @@
 ## roadmap
 
 - [ ] deploy steps
+  - server: setup nginx / nginx proxy manager
   - [x] migrate asdf to script
     - ignore .tool-versions
-  - nginx / nginx proxy manager
   - learn make? make file?
 - initial server setup (spin up)
   - systemctl inside rust?

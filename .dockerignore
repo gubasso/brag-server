@@ -1,8 +1,0 @@
-/brag-server-data/
-**/brag-server-data/
-/target/
-**/target/
-
-# Ignore version control directories
-.git/
-.gitignore
