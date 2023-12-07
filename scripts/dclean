@@ -1,4 +1,5 @@
 #!/bin/sh
-. ./envs/db.env
-docker compose down
+. ./envs/env.env
+docker kill "$(docker ps -q)"
+docker compose -f Docker/compose.yaml down
 sudo rm -rf "$DATA_PATH"

@@ -1,33 +1,4 @@
 services:
-  # caddy:
-  #   image: caddy:${CADDY_VERSION}
-  #   restart: unless-stopped
-  #   cap_add:
-  #     - NET_ADMIN
-  #   ports:
-  #     - "80:2080"
-  #     - "443:443"
-  #     - "443:443/udp"
-  #   volumes:
-  #     - ${PWD}/Caddyfile:/etc/caddy/Caddyfile
-  #     # - $PWD/site:/srv
-  #     - caddy_data:/data
-  #     - caddy_config:/config
-  #   depends_on:
-  #     - db
-  api:
-    build:
-      context: .
-      dockerfile: ./Dockerfiles/brag-server/Dockerfile
-    entrypoint: ["/usr/local/bin/entrypoint.sh"]
-    ports:
-      - "${API_PORT}:${API_PORT}"
-    volumes:
-      - ./entrypoint.sh:/usr/local/bin/entrypoint.sh
-    depends_on:
-      - db
-    secrets:
-      - database_url
   db:
     image: "postgres:${POSTGRES_VERSION}"
     restart: always

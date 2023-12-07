@@ -5,8 +5,11 @@ use brag_server::{
 };
 use sqlx::{Pool, Postgres};
 
-use std::time::Duration;
 use std::{env, error::Error, fmt::Display};
+use std::{
+    io::{stdout, BufWriter, Write},
+    time::Duration,
+};
 use tokio::{fs::create_dir_all, time::interval};
 
 const _DAY_IN_SEC: i32 = 86400;
@@ -49,9 +52,14 @@ async fn update_repositories(
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    let stdout = stdout();
+    let mut bw = BufWriter::new(stdout);
+    writeln!(bw, "load_db main started")?;
     let repos_path = repos_base_path();
     create_dir_all(&repos_path).await?;
-    let config = load_config().await?;
+    let config = load_config()
+        .await
+        .expect("brag-server-config.toml needs to exist.");
     let mut repositories = Repositories::from(&config.hosts).await?;
     let db_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     let pool = sqlx::postgres::PgPoolOptions::new()

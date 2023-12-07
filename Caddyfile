@@ -1,3 +1,0 @@
-{$SITE_ADDRESS}:{$API_PORT}
-
-reverse_proxy {$SITE_ADDRESS}:3000

@@ -7,7 +7,7 @@ use crate::{
 };
 
 pub async fn load_config() -> Result<Config, Box<dyn Error>> {
-    let config_file = PathBuf::from("samples/brag-server.toml");
+    let config_file = PathBuf::from("brag-server.toml");
     let config_str = read_to_string(config_file).await?;
     toml::from_str(&config_str).map_err(|e| format!("Failed to parse config as TOML: {}", e).into())
 }

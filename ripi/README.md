@@ -5,21 +5,10 @@
 - [ ] deploy steps
   - [x] migrate asdf to script
     - ignore .tool-versions
-  - compose:
-    - [ ] rust app:
-      - https://www.docker.com/blog/simplify-your-deployments-using-the-rust-official-image/
-    - load-balancer/web-server:
-      - [ ] study caddy youtube
-      - https://www.docker.com/blog/deploying-web-applications-quicker-and-easier-with-caddy-2/
-    - postgresql server
-
-  - container using a ssh-agent
-    - https://www.jamesridgway.co.uk/sharing-an-ssh-agent-between-a-host-machine-and-a-docker-container/
-  
-  - initial server setup (spin up)
-    - systemctl inside rust?
-  - `brag-server` as a docker container (to be deployed with a `docker run` or `docker compose`)
-  - `nginx` as a docker container (`compose`)
+  - nginx / nginx proxy manager
+  - learn make? make file?
+- initial server setup (spin up)
+  - systemctl inside rust?
 - [x] refactor error handling: return errors like python-eve: as http and also as a json with error details
 - [x] routine to update repos periodically
 - [x] implement migrate! to main, to reset db for a new binary run
@@ -34,3 +23,10 @@
   - [funtoo / keychain - Suggest alternatives (use gpg-agent systemd unit) #138](https://github.com/funtoo/keychain/issues/138)
 - [x] command_to_clone_repository
 - [x] endpoint filter by user email:
+
+## definitions
+
+- run caddy in host too:
+  - it will serve all of the docker services and other services behind
+- rust will run in the host: it calls docker to run mergestat
+  - i can adapt it later
