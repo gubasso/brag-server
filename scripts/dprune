@@ -1,7 +1,0 @@
-#!/bin/sh
-. ./envs/env.env
-# docker compose down
-docker kill "$(docker ps -q)"
-docker system prune -a -f && docker volume prune -f
-docker network prune -f
-sudo rm -rf "$DATA_PATH" ../"$DATA_PATH"

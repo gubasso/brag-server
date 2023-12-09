@@ -1,5 +1,0 @@
-#!/bin/sh
-clear
-. ./envs/db.env
-. ./scripts/migrate
-cargo run --bin load_db

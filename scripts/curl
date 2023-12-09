@@ -1,4 +1,8 @@
 #!/bin/sh
+curl -v -G \
+    -d 'by=month' \
+    -d 'author_email=gubasso@eambar.net' \
+    127.0.0.1:/count
 # curl -v -X POST -H "Content-Type: application/json" -d @"./samples/message.json" 127.0.0.1:3000/mirror_body_json
 # curl -v -H "Content-Type: application/json" -d @"./samples/message.json" 127.0.0.1:3000/mirror_body_json
 # curl 127.0.0.1:3000/path_variables/3452342
@@ -20,7 +24,3 @@
 #     -d 'author_email=gubasso@cwnt.io' \
 #     -d 'repo=gubasso/ripissue' \
 #     127.0.0.1:3000/count
-curl -v -G \
-    -d 'by=month' \
-    -d 'author_email=gubasso@eambar.net' \
-    127.0.0.1:/count

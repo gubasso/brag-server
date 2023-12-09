@@ -24,7 +24,3 @@ secrets:
     environment: "POSTGRES_PASSWORD"
   database_url:
     environment: "DATABASE_URL"
-volumes:
-  caddy_data:
-    external: true
-  caddy_config:

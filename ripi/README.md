@@ -3,12 +3,20 @@
 ## roadmap
 
 - [ ] deploy steps
-  - server: setup nginx / nginx proxy manager
+  - [x] learn make? make file?
+  - [ ] deploy with make: try to make as automatic as possible
+    - check if asdf is already installed install_asdf
+      - same for rust and pyhton
+    - load_db and brag-server: compile, cp binaries to .local/bin, and run them there
+  - [ ] setup NPM with `host.docker.internal`
+  - [x] server: setup nginx / nginx proxy manager
   - [x] migrate asdf to script
     - ignore .tool-versions
-  - learn make? make file?
 - initial server setup (spin up)
   - systemctl inside rust?
+
+## done
+
 - [x] refactor error handling: return errors like python-eve: as http and also as a json with error details
 - [x] routine to update repos periodically
 - [x] implement migrate! to main, to reset db for a new binary run

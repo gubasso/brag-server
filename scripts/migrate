@@ -1,5 +1,0 @@
-#!/bin/sh
-. ./envs/db.env
-rm -rf "$HOME"/.local/share/brag-server
-sqlx migrate revert
-sqlx migrate run
