@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS commits (
     parents         	 INTEGER
 );
 
-CREATE INDEX idx_commits_repo_authoremail ON commits (
+CREATE INDEX IF NOT EXISTS idx_commits_repo_authoremail ON commits (
     repo,
     author_email
 );

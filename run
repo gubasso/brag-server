@@ -1,0 +1,15 @@
+#!/bin/sh
+. ./.env
+
+case $1 in
+    dev)
+        ./scripts/dev.sh "$2"
+        ;;
+    build)
+        ./scripts/build.sh "$2"
+        ;;
+    *)
+        echo 'Error: Invalid input. Please enter "dev" or "build"'
+        exit 1
+        ;;
+esac

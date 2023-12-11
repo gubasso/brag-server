@@ -2,7 +2,9 @@
 
 ## roadmap
 
-- [[implementmakefileanddeploysteps-issue]]
+- implement_makefile_and_deploy_steps
+- [ ] deploy with make: try to make as automatic as possible
+  - load_db and brag-server: compile, cp binaries to .local/bin, and run them there
 - [ ] setup NPM with `host.docker.internal`
 - [x] server: setup nginx / nginx proxy manager
 - initial server setup (spin up)
