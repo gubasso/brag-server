@@ -2,8 +2,8 @@
 
 ## roadmap
 
-- deploy_build_scripts
 - [ ] setup NPM with `host.docker.internal`
+- [x] deploy_build_scripts
 - [x] server: setup nginx / nginx proxy manager
 - initial server setup (spin up)
   - systemctl inside rust?
