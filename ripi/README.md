@@ -2,8 +2,7 @@
 
 ## roadmap
 
-- implement_makefile_and_deploy_steps
-- [ ] deploy with make: try to make as automatic as possible
+- [ ] deploy/build script: try to make as automatic as possible
   - load_db and brag-server: compile, cp binaries to .local/bin, and run them there
 - [ ] setup NPM with `host.docker.internal`
 - [x] server: setup nginx / nginx proxy manager
@@ -12,6 +11,7 @@
 
 ## done
 
+- [x] implement_makefile_and_deploy_steps
 - [x] refactor error handling: return errors like python-eve: as http and also as a json with error details
 - [x] routine to update repos periodically
 - [x] implement migrate! to main, to reset db for a new binary run
