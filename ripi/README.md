@@ -2,8 +2,7 @@
 
 ## roadmap
 
-- [ ] deploy/build script: try to make as automatic as possible
-  - load_db and brag-server: compile, cp binaries to .local/bin, and run them there
+- deploy_build_scripts
 - [ ] setup NPM with `host.docker.internal`
 - [x] server: setup nginx / nginx proxy manager
 - initial server setup (spin up)
