@@ -48,11 +48,12 @@ install_asdf() {
 install_runner() {
     program="$1"
     version="$2"
-    echo "ASDF: installing $program v.$version"
+    echo "ASDF: installing $program v.$version ."
     asdf plugin add "$program"
     asdf install "$program" "$version"
     asdf global "$program" "$version"
     asdf local "$program" "$version"
+    echo "ASDF: $program v.$version installed."
 }
 
 install_runners() {
