@@ -1,0 +1,15 @@
+[Unit]
+Description=Brag Server
+Requires=load_db.service spin_db.service
+After=load_db.service spin_db.service
+
+[Service]
+User=%i
+Group=%i
+WorkingDirectory=/opt/brag-server
+EnvironmentFile=/opt/brag-server/env
+ExecStart=/opt/brag-server/brag-server
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

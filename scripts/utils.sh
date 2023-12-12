@@ -18,7 +18,7 @@ migrate() {
 spin_db() {
     if ! is_db_running; then
         echo "Starting postgresql the database..."
-        docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
+        sudo docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
         migrate
     fi
     echo "Database is up and running."

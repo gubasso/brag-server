@@ -4,7 +4,6 @@
 
 - [ ] setup NPM with `host.docker.internal`
   - [ ] brag.gubasso.xyz
-- [ ] binaries to systemd
 - [x] deploy_build_scripts
 - [x] server: setup nginx / nginx proxy manager
 - initial server setup (spin up)
