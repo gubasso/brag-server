@@ -32,8 +32,8 @@ case $1 in
         ;;
     dstop)
         echo "Docker: stoping containers."
-        docker compose -f "$DOCKER_COMPOSE_FILE" down
-        docker kill "$(docker ps -q)"
+        sudo docker compose -f "$DOCKER_COMPOSE_FILE" down
+        sudo docker kill "$(docker ps -q)"
         ;;
     dclean)
         ./run dev clean_db
@@ -43,8 +43,8 @@ case $1 in
         echo "Docker: pruning all docker data."
         ./run dev clean_db
         ./run dev dstop
-        docker system prune -a -f && docker volume prune -f
-        docker network prune -f
+        sudo docker system prune -a -f && sudo docker volume prune -f
+        sudo docker network prune -f
         ;;
     *)
         echo 'Error: Invalid input. Please enter one of the valid dev commands.'
