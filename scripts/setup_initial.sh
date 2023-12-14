@@ -24,9 +24,9 @@ echo "## Initial Setup"
 
 # shellcheck disable=SC1091
 . ./env
-./install_asdf.sh
-./install_asdf_runner.sh "rust" "$RUST_VERSION"
-./install_sqlx.sh
+./scripts/install_asdf.sh
+./scripts/install_asdf_runner.sh "rust" "$RUST_VERSION"
+./scripts/install_sqlx.sh
 if [ "$RUNNING_ENV" = 'dev' ]; then
     asdf install
     ./install_asdf_runner.sh "python" "$PYTHON_VERSION"
