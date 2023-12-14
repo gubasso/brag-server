@@ -2,7 +2,7 @@
 set -e
 program="$1"
 version="$2"
-. ./utils.sh
+. ./scripts/utils.sh
 
 is_asdf_plugin_installed "$program"
 is_program_installed="$?"
