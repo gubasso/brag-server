@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 # shellcheck disable=SC1091
-sudo . "$PROD_WD"/env
+sudo -E . "$PROD_WD"/env
 sys_user="$1"
 
 sudo systemctl enable spin_db.service --now

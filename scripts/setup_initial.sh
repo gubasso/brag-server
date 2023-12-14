@@ -29,7 +29,7 @@ echo "## Initial Setup"
 ./scripts/install_sqlx.sh
 if [ "$RUNNING_ENV" = 'dev' ]; then
     asdf install
-    ./install_asdf_runner.sh "python" "$PYTHON_VERSION"
+    ./scripts/install_asdf_runner.sh "python" "$PYTHON_VERSION"
     asdf reshim
     pip install pre-commit
     pre-commit install
@@ -38,15 +38,15 @@ if [ "$RUNNING_ENV" = 'dev' ]; then
 fi
 
 if [ "$RUNNING_ENV" = 'prod' ]; then
-    sudo cp "$DOCKER_COMPOSE_FILE" "$PROD_WD"
+    sudo -E cp "$DOCKER_COMPOSE_FILE" "$PROD_WD"
     cargo build --bin load_db --release
     cargo build --bin brag-server --release
-    sudo mkdir -p "$PROD_WD"
+    sudo -E mkdir -p "$PROD_WD"
     # cp binaries to default system-wide locations
-    sudo cp ./target/release/load_db "$PROD_WD"
-    sudo cp ./target/release/brag-server "$PROD_WD"
+    sudo -E cp ./target/release/load_db "$PROD_WD"
+    sudo -E cp ./target/release/brag-server "$PROD_WD"
     # cp units to systemd dirs
-    sudo cp ./units/* /etc/systemd/system
+    sudo -E cp ./units/* /etc/systemd/system
 fi
 
 touch "$RUNNING_ENV_IS_OK_FILE"

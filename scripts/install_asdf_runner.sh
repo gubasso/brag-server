@@ -9,7 +9,7 @@ is_program_installed="$?"
 is_asdf_plugin_version_installed "$program" "$version"
 is_version_installed="$?"
 
-if "$is_program_installed" && "$is_version_installed"; then
+if [ "$is_program_installed" -eq 0 ] && [ "$is_version_installed" -eq 0 ]; then
     exit 0
 fi
 

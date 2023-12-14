@@ -11,7 +11,7 @@ case $1 in
     load_db)
         if ! is_db_running; then
             echo "Starting postgresql the database..."
-            sudo docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
+            sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
             echo "Starting migration revert and run"
             sqlx migrate revert
             sqlx migrate run
@@ -21,9 +21,9 @@ case $1 in
         cargo run --bin load_db
         ;;
     clean_db)
-        echo "Database: cleaning db data."
+        echo "(clean_db) Database: cleaning db data."
         sqlx migrate revert
-        sudo rm -rf "$DATA_PATH"
+        sudo -E rm -rf "$DATA_PATH"
         rm -rf "$HOME"/.local/share/brag-server
         ;;
     watch)
@@ -31,11 +31,14 @@ case $1 in
         cargo watch -q -c -w src -x "run --bin brag-server"
         ;;
     dstop)
-        echo "Docker: stoping containers."
-        sudo docker compose -f "$DOCKER_COMPOSE_FILE" down
+        echo "(dstop) Docker: stoping containers."
+        echo "DOCKER_COMPOSE_FILE: $DOCKER_COMPOSE_FILE"
+        echo "DATA_PATH: $DATA_PATH"
+        sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" down
         sudo docker kill "$(docker ps -q)"
         ;;
     dclean)
+        echo "(dclean) Docker: clean_db and dstop."
         ./run dev clean_db
         ./run dev dstop
         ;;
