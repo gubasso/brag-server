@@ -38,6 +38,7 @@ if [ "$RUNNING_ENV" = 'dev' ]; then
 fi
 
 if [ "$RUNNING_ENV" = 'prod' ]; then
+    sudo cp "$DOCKER_COMPOSE_FILE" "$PROD_WD"
     cargo build --bin load_db --release
     cargo build --bin brag-server --release
     sudo mkdir -p "$PROD_WD"

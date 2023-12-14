@@ -15,6 +15,7 @@ esac
 export PROD_WD='/opt/brag-server'
 export NET_HOST
 export RUNNING_ENV_IS_OK_FILE='.runner-dev-ok'
+export DOCKER_COMPOSE_FILE='Docker/compose.yaml'
 export POSTGRES_PASSWORD_GOPASS='Playground/postgre_sample'
 export DB_PORT='5432'
 export POSTGRES_USER='postgres'
