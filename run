@@ -1,15 +1,20 @@
 #!/bin/sh
-. ./.env
+set -e
+export RUNNING_ENV="$1"
+. ./scripts/env_vars.sh
+./scripts/setup_initial.sh
 
-case $1 in
+case "$RUNNING_ENV" in
     dev)
-        ./scripts/dev.sh "$2"
+        dev_command="$2"
+        ./scripts/dev.sh "$dev_command"
         ;;
     prod)
-        ./scripts/prod.sh
+        prod_sys_user="$2"
+        ./scripts/prod.sh "$prod_sys_user"
         ;;
     *)
-        echo 'Error: Invalid input. Please enter "dev" or "build"'
+        echo 'Error: Invalid input. Please enter "dev" or "prod"'
         exit 1
         ;;
 esac

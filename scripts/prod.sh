@@ -1,13 +1,9 @@
 #!/bin/sh
-. ./.env
-. ./scripts/utils.sh
+set -e
+# shellcheck disable=SC1091
+sudo . "$PROD_WD"/env
+sys_user="$1"
 
-case $1 in
-    deploy)
-        ./scripts/deploy.sh
-        ;;
-    *)
-        echo 'Run Prod Error: Invalid input. Please enter one of the valid steps.'
-        exit 1
-        ;;
-esac
+sudo systemctl enable spin_db.service --now
+sudo systemctl enable "load_db@$sys_user.service" --now
+sudo systemctl enable "brag-server@$sys_user.service" --now

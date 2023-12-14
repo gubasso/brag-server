@@ -2,6 +2,8 @@
 .env
 env
 brag-server-data/
+data/
+.runner-dev-ok
 # Created by https://www.toptal.com/developers/gitignore/api/rust
 # Edit at https://www.toptal.com/developers/gitignore?templates=rust
 
