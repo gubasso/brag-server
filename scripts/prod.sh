@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 # shellcheck disable=SC1091
-sudo -E . "$PROD_WD"/env
+. "$PROD_WD"/env
 sys_user="$1"
 
 if [ -z "$sys_user" ]; then
