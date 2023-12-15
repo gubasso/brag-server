@@ -38,10 +38,10 @@ if [ "$RUNNING_ENV" = 'dev' ]; then
 fi
 
 if [ "$RUNNING_ENV" = 'prod' ]; then
+    sudo -E mkdir -p "$PROD_WD"
     sudo -E cp "$DOCKER_COMPOSE_FILE" "$PROD_WD"
     cargo build --bin load_db --release
     cargo build --bin brag-server --release
-    sudo -E mkdir -p "$PROD_WD"
     # cp binaries to default system-wide locations
     sudo -E cp ./target/release/load_db "$PROD_WD"
     sudo -E cp ./target/release/brag-server "$PROD_WD"
