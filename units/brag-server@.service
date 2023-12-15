@@ -1,7 +1,7 @@
 [Unit]
 Description=Brag Server
-Requires=load_db.service spin_db.service
-After=load_db.service spin_db.service
+Requires=load_db@.service spin_db.service
+After=load_db@.service spin_db.service
 
 [Service]
 User=%i
