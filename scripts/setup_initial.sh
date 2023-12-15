@@ -28,8 +28,8 @@ echo "## Initial Setup"
 ./scripts/install_asdf_runner.sh "rust" "$RUST_VERSION"
 ./scripts/install_sqlx.sh
 if [ "$RUNNING_ENV" = 'dev' ]; then
-    asdf install
     ./scripts/install_asdf_runner.sh "python" "$PYTHON_VERSION"
+    asdf install
     asdf reshim
     pip install pre-commit
     pre-commit install
