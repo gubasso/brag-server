@@ -1,6 +1,4 @@
 #!/bin/sh
-# shellcheck disable=SC1091
-. ./env
 
 is_db_running() {
     if [ -z "$(docker-compose -f "$DOCKER_COMPOSE_FILE" ps -q db)" ]; then

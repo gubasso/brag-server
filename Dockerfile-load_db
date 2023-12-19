@@ -1,0 +1,21 @@
+ARG RUST_VERSION
+# Use the official Rust image as a parent image
+FROM rust:${RUST_VERSION} as builder
+WORKDIR /load_db
+COPY . .
+RUN cargo build --bin load_db --release
+
+FROM ubuntu:latest
+# Install necessary libraries (including SSL)
+RUN apt-get upgrade -y && apt-get update -y && \
+    apt-get install -y \
+    openssl \
+    ca-certificates \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /root/.local/share/brag-server/repos
+WORKDIR /load_db
+COPY --from=builder /load_db/brag-server.toml /load_db/brag-server.toml
+COPY --from=builder /load_db/target/release/load_db /load_db/load_db
+
+CMD ["./load_db"]

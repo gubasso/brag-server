@@ -1,23 +1,15 @@
 #!/bin/sh
-case "$RUNNING_ENV" in
-    dev)
-        NET_HOST='127.0.0.1'
-        ;;
-    prod)
-        # NET_HOST='gubasso.xyz'
-        NET_HOST='127.0.0.1'
-        ;;
-    *)
-        echo 'Error: Invalid input. Please enter "dev" or "prod"'
-        exit 1
-        ;;
-esac
+export API_PORT='3000'
+export NET_HOST='db'
+export DATA_PATH='./data'
 export PROD_WD='/opt/brag-server'
-export NET_HOST
 export RUNNING_ENV_IS_OK_FILE='.runner-dev-ok'
 export DOCKER_COMPOSE_FILE='Docker/compose.yaml'
 export POSTGRES_PASSWORD_GOPASS='Playground/postgre_sample'
 export DB_PORT='5432'
+export RUST_VERSION='1.73.0'
+export PYTHON_VERSION='3.12.0'
+export POSTGRES_VERSION='16'
 export POSTGRES_USER='postgres'
 export POSTGRES_DB='postgres'
 POSTGRES_PASSWORD="$(gopass show -o "$POSTGRES_PASSWORD_GOPASS")"

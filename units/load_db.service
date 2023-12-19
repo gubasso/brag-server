@@ -4,12 +4,9 @@ Requires=network.target spin_db.service
 After=network.target spin_db.service
 
 [Service]
-User=%i
-Group=%i
+Type=exec
 WorkingDirectory=/opt/brag-server
-EnvironmentFile=/opt/brag-server/env
-ExecStart=/opt/brag-server/load_db
-Restart=on-failure
+ExecStart=/opt/brag-server/start_load_db.sh
 
 [Install]
 WantedBy=multi-user.target

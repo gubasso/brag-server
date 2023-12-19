@@ -59,7 +59,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     create_dir_all(&repos_path).await?;
     let config = load_config()
         .await
-        .expect("brag-server-config.toml needs to exist.");
+        .expect("brag-server.toml needs to exist.");
     let mut repositories = Repositories::from(&config.hosts).await?;
     let db_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     let pool = sqlx::postgres::PgPoolOptions::new()

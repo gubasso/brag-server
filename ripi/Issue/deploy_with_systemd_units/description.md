@@ -1,7 +1,13 @@
 # deploy_with_systemd_units (Issue)
 
-**deploy.sh**
+new approach: run everything using just docker/docker-compose
 
+- refactor load_db: remove mergestat depedency
+
+---
+
+- remove `env`
+- load `env_vars.sh`
 - `setup_initial.sh`
   - mkdir `/opt/brag-server`
   - save env_file

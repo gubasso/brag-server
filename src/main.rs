@@ -29,7 +29,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .layer(cors);
     let addr_str = format!("{}:{}", env::var("NET_HOST")?, env::var("API_PORT")?);
     let addr: SocketAddr = addr_str.parse()?;
-    println!("server is up");
+    println!("brag-server is up and running");
     Server::bind(&addr).serve(app.into_make_service()).await?;
     Ok(())
 }

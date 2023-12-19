@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 # shellcheck disable=SC1091
-. ./env
 . ./scripts/utils.sh
 
 case $1 in

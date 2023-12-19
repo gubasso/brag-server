@@ -1,0 +1,13 @@
+[Unit]
+Description=Brag Server
+Requires=load_db.service spin_db.service
+After=load_db.service spin_db.service
+
+[Service]
+Type=exec
+WorkingDirectory=/opt/brag-server
+ExecStart=/opt/brag-server/start_brag_server.sh
+# Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

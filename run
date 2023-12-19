@@ -10,11 +10,21 @@ case "$RUNNING_ENV" in
         ./scripts/dev.sh "$dev_command"
         ;;
     prod)
-        prod_sys_user="$2"
-        ./scripts/prod.sh "$prod_sys_user"
+        sudo systemctl enable spin_db.service --now
+        # sudo systemctl enable load_db.service --now
+        # sleep 10
+        # sudo systemctl enable brag-server.service --now
+        # sudo systemctl status brag-server.service
+
+        ;;
+    clean_prod)
+        sudo rm -rf  "$PROD_WD"/"$DATA_PATH"
+        sudo systemctl disable spin_db.service --now
+        sudo systemctl disable load_db.service --now
+        sudo systemctl disable brag-server.service --now
         ;;
     *)
-        echo 'Error: Invalid input. Please enter "dev" or "prod"'
+        echo 'run main: Error: Invalid input. Please enter "dev" or "prod"'
         exit 1
         ;;
 esac
