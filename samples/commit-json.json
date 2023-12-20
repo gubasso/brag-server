@@ -1,0 +1,1862 @@
+[
+    {
+        "author": {
+            "date": "Tue, 12 Dec 2023 16:23:53 -0300",
+            "dateISO8601": "2023-12-12T16:23:53-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "cd99af51def5ac47f8b3243be769cb4cd9f5a37f",
+        "commitHashAbbreviated": "cd99af5",
+        "committer": {
+            "date": "Tue, 12 Dec 2023 16:23:53 -0300",
+            "dateISO8601": "2023-12-12T16:23:53-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "2fd521266e2586d61cd9eded28730302f3be885c",
+        "parentAbbreviated": "2fd5212",
+        "refs": "develop",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #deploy_with_systemd_units.",
+        "subjectSanitized": "created-Issue-deploy_with_systemd_units",
+        "tree": "e08d958686918e42a61e133bb18e9e112a83b14e",
+        "treeAbbreviated": "e08d958"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 22:00:34 -0300",
+            "dateISO8601": "2023-12-11T22:00:34-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "2fd521266e2586d61cd9eded28730302f3be885c",
+        "commitHashAbbreviated": "2fd5212",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 22:00:34 -0300",
+            "dateISO8601": "2023-12-11T22:00:34-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "7724a5485296674c203554ae160c4ce6687e47b3",
+        "parentAbbreviated": "7724a54",
+        "refs": "origin/develop, origin/HEAD",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "up ripi",
+        "subjectSanitized": "up-ripi",
+        "tree": "35cee580fb722dee8b920acb41aae889c3b58c41",
+        "treeAbbreviated": "35cee58"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 19:54:32 -0300",
+            "dateISO8601": "2023-12-11T19:54:32-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "7724a5485296674c203554ae160c4ce6687e47b3",
+        "commitHashAbbreviated": "7724a54",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 19:54:32 -0300",
+            "dateISO8601": "2023-12-11T19:54:32-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "2d76b37ce7689afa0afe529a8fdf36045894e3c3",
+        "parentAbbreviated": "2d76b37",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "up ripi",
+        "subjectSanitized": "up-ripi",
+        "tree": "7c75bf4b20828b54c23ec174eb5b2f8c1d0c878a",
+        "treeAbbreviated": "7c75bf4"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 19:40:52 -0300",
+            "dateISO8601": "2023-12-11T19:40:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "2d76b37ce7689afa0afe529a8fdf36045894e3c3",
+        "commitHashAbbreviated": "2d76b37",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 19:40:52 -0300",
+            "dateISO8601": "2023-12-11T19:40:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "eb2cc21a32bc4ff65f43f332ebdcfa6f7b1f001f",
+        "parentAbbreviated": "eb2cc21",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #deploy_build_scripts.",
+        "subjectSanitized": "closed-Issue-deploy_build_scripts",
+        "tree": "7a111460d453419093711b19fc34c23ec3449583",
+        "treeAbbreviated": "7a11146"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 19:40:51 -0300",
+            "dateISO8601": "2023-12-11T19:40:51-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "eb2cc21a32bc4ff65f43f332ebdcfa6f7b1f001f",
+        "commitHashAbbreviated": "eb2cc21",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 19:40:51 -0300",
+            "dateISO8601": "2023-12-11T19:40:51-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "6dd908d41bea5a1e5492635063d32b671eabba46",
+        "parentAbbreviated": "6dd908d",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #deploy_build_scripts.",
+        "subjectSanitized": "up-Issue-deploy_build_scripts",
+        "tree": "483395ff1f8e92044a3f8683c4a6a086dbc7765b",
+        "treeAbbreviated": "483395f"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 19:40:25 -0300",
+            "dateISO8601": "2023-12-11T19:40:25-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "6dd908d41bea5a1e5492635063d32b671eabba46",
+        "commitHashAbbreviated": "6dd908d",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 19:40:25 -0300",
+            "dateISO8601": "2023-12-11T19:40:25-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "6860f75cb8b4ef19b8bcb3012481805318a2541b",
+        "parentAbbreviated": "6860f75",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #deploy_build_scripts.",
+        "subjectSanitized": "up-Issue-deploy_build_scripts",
+        "tree": "483395ff1f8e92044a3f8683c4a6a086dbc7765b",
+        "treeAbbreviated": "483395f"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 17:00:35 -0300",
+            "dateISO8601": "2023-12-11T17:00:35-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "6860f75cb8b4ef19b8bcb3012481805318a2541b",
+        "commitHashAbbreviated": "6860f75",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 17:00:35 -0300",
+            "dateISO8601": "2023-12-11T17:00:35-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "6bf5f3c1a745329e327dc4a6b1a3884bba8d2fd5",
+        "parentAbbreviated": "6bf5f3c",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #deploy_build_scripts.",
+        "subjectSanitized": "created-Issue-deploy_build_scripts",
+        "tree": "d87710d5e55806b8dbaabe54016095d7b2855b65",
+        "treeAbbreviated": "d87710d"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 16:59:39 -0300",
+            "dateISO8601": "2023-12-11T16:59:39-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "6bf5f3c1a745329e327dc4a6b1a3884bba8d2fd5",
+        "commitHashAbbreviated": "6bf5f3c",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 16:59:39 -0300",
+            "dateISO8601": "2023-12-11T16:59:39-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "cdd69755cb9a1be026a399770ef71028be4d49a2",
+        "parentAbbreviated": "cdd6975",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #implement_makefile_and_deploy_steps.",
+        "subjectSanitized": "closed-Issue-implement_makefile_and_deploy_steps",
+        "tree": "de53553d9aeaa4b112f13a480f1e3bd686b7a2b3",
+        "treeAbbreviated": "de53553"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 16:59:39 -0300",
+            "dateISO8601": "2023-12-11T16:59:39-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "cdd69755cb9a1be026a399770ef71028be4d49a2",
+        "commitHashAbbreviated": "cdd6975",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 16:59:39 -0300",
+            "dateISO8601": "2023-12-11T16:59:39-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "c07775016784656c06298e875faa3db02c8e1697",
+        "parentAbbreviated": "c077750",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_makefile_and_deploy_steps.",
+        "subjectSanitized": "up-Issue-implement_makefile_and_deploy_steps",
+        "tree": "4d24a04a812f0c4fb116fcf8134c1ddf10d6a580",
+        "treeAbbreviated": "4d24a04"
+    },
+    {
+        "author": {
+            "date": "Mon, 11 Dec 2023 16:59:00 -0300",
+            "dateISO8601": "2023-12-11T16:59:00-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "c07775016784656c06298e875faa3db02c8e1697",
+        "commitHashAbbreviated": "c077750",
+        "committer": {
+            "date": "Mon, 11 Dec 2023 16:59:00 -0300",
+            "dateISO8601": "2023-12-11T16:59:00-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "22a99c7d92943bc186540cba286ef11fc5f37b48",
+        "parentAbbreviated": "22a99c7",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_makefile_and_deploy_steps.",
+        "subjectSanitized": "up-Issue-implement_makefile_and_deploy_steps",
+        "tree": "4d24a04a812f0c4fb116fcf8134c1ddf10d6a580",
+        "treeAbbreviated": "4d24a04"
+    },
+    {
+        "author": {
+            "date": "Sat, 9 Dec 2023 18:29:09 -0300",
+            "dateISO8601": "2023-12-09T18:29:09-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "22a99c7d92943bc186540cba286ef11fc5f37b48",
+        "commitHashAbbreviated": "22a99c7",
+        "committer": {
+            "date": "Sat, 9 Dec 2023 18:29:09 -0300",
+            "dateISO8601": "2023-12-09T18:29:09-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "344bf5c8b5eea6d1fb5c5d4f917f98976f35358c",
+        "parentAbbreviated": "344bf5c",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_makefile_and_deploy_steps.",
+        "subjectSanitized": "up-Issue-implement_makefile_and_deploy_steps",
+        "tree": "1d22faf7be620aacfa34210c628488aa2fb25916",
+        "treeAbbreviated": "1d22faf"
+    },
+    {
+        "author": {
+            "date": "Sat, 9 Dec 2023 18:27:40 -0300",
+            "dateISO8601": "2023-12-09T18:27:40-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "344bf5c8b5eea6d1fb5c5d4f917f98976f35358c",
+        "commitHashAbbreviated": "344bf5c",
+        "committer": {
+            "date": "Sat, 9 Dec 2023 18:27:40 -0300",
+            "dateISO8601": "2023-12-09T18:27:40-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "d322636f21258edb87ef2d3d196eadcf4b15c72a",
+        "parentAbbreviated": "d322636",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #implement_makefile_and_deploy_steps.",
+        "subjectSanitized": "created-Issue-implement_makefile_and_deploy_steps",
+        "tree": "27e865c3503fccd38a83ebabe720a7b5e28f5398",
+        "treeAbbreviated": "27e865c"
+    },
+    {
+        "author": {
+            "date": "Fri, 8 Dec 2023 00:08:52 -0300",
+            "dateISO8601": "2023-12-08T00:08:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "d322636f21258edb87ef2d3d196eadcf4b15c72a",
+        "commitHashAbbreviated": "d322636",
+        "committer": {
+            "date": "Fri, 8 Dec 2023 00:08:52 -0300",
+            "dateISO8601": "2023-12-08T00:08:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "7e26be43a03ac515a3664a7bfdfc01c153601e28",
+        "parentAbbreviated": "7e26be4",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "ripi closed nginx proxy manager",
+        "subjectSanitized": "ripi-closed-nginx-proxy-manager",
+        "tree": "a9e7aedc533b44a83dc1a8835a58068d6bc8e2f7",
+        "treeAbbreviated": "a9e7aed"
+    },
+    {
+        "author": {
+            "date": "Thu, 7 Dec 2023 20:40:36 -0300",
+            "dateISO8601": "2023-12-07T20:40:36-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "7e26be43a03ac515a3664a7bfdfc01c153601e28",
+        "commitHashAbbreviated": "7e26be4",
+        "committer": {
+            "date": "Thu, 7 Dec 2023 20:40:36 -0300",
+            "dateISO8601": "2023-12-07T20:40:36-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "d2ccc9ae992a96fb2fd6970489050493049cdf4a",
+        "parentAbbreviated": "d2ccc9a",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue # nginx proxy manager.",
+        "subjectSanitized": "created-Issue-nginx-proxy-manager",
+        "tree": "bae972789d1de8e9227fb1318d35238fb577ae34",
+        "treeAbbreviated": "bae9727"
+    },
+    {
+        "author": {
+            "date": "Thu, 7 Dec 2023 20:38:31 -0300",
+            "dateISO8601": "2023-12-07T20:38:31-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "d2ccc9ae992a96fb2fd6970489050493049cdf4a",
+        "commitHashAbbreviated": "d2ccc9a",
+        "committer": {
+            "date": "Thu, 7 Dec 2023 20:38:31 -0300",
+            "dateISO8601": "2023-12-07T20:38:31-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "89358866601b762f92322bd0c0c3b92f3e0b7574",
+        "parentAbbreviated": "8935886",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #docker_compose_service_rust_app.",
+        "subjectSanitized": "closed-Issue-docker_compose_service_rust_app",
+        "tree": "06d9f5a83230946302eeab4c4465d7e3ba74ff40",
+        "treeAbbreviated": "06d9f5a"
+    },
+    {
+        "author": {
+            "date": "Thu, 7 Dec 2023 20:38:29 -0300",
+            "dateISO8601": "2023-12-07T20:38:29-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "89358866601b762f92322bd0c0c3b92f3e0b7574",
+        "commitHashAbbreviated": "8935886",
+        "committer": {
+            "date": "Thu, 7 Dec 2023 20:38:29 -0300",
+            "dateISO8601": "2023-12-07T20:38:29-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "5470bfb30614956ab8b97625ed6f8fe7ccebdf27",
+        "parentAbbreviated": "5470bfb",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #docker_compose_service_rust_app.",
+        "subjectSanitized": "up-Issue-docker_compose_service_rust_app",
+        "tree": "9bf1554a7be8f21f1583d5d788fc877d370500b9",
+        "treeAbbreviated": "9bf1554"
+    },
+    {
+        "author": {
+            "date": "Thu, 7 Dec 2023 13:36:16 -0300",
+            "dateISO8601": "2023-12-07T13:36:16-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "5470bfb30614956ab8b97625ed6f8fe7ccebdf27",
+        "commitHashAbbreviated": "5470bfb",
+        "committer": {
+            "date": "Thu, 7 Dec 2023 13:36:16 -0300",
+            "dateISO8601": "2023-12-07T13:36:16-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "841b7fc36d142103bd32c45819c8fea136e08d1f",
+        "parentAbbreviated": "841b7fc",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #docker_compose_service_rust_app.",
+        "subjectSanitized": "up-Issue-docker_compose_service_rust_app",
+        "tree": "9e69e05f55f0025c0254ca8698ae42cd8baa1ad7",
+        "treeAbbreviated": "9e69e05"
+    },
+    {
+        "author": {
+            "date": "Wed, 6 Dec 2023 08:53:08 -0300",
+            "dateISO8601": "2023-12-06T08:53:08-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "841b7fc36d142103bd32c45819c8fea136e08d1f",
+        "commitHashAbbreviated": "841b7fc",
+        "committer": {
+            "date": "Wed, 6 Dec 2023 08:53:08 -0300",
+            "dateISO8601": "2023-12-06T08:53:08-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "93017c4f4497a3c00130b2b040426168871574ca",
+        "parentAbbreviated": "93017c4",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #periodically_update_repos_and_db.",
+        "subjectSanitized": "closed-Issue-periodically_update_repos_and_db",
+        "tree": "31f78cc054e67e6a596336f529593ca5c0de74b2",
+        "treeAbbreviated": "31f78cc"
+    },
+    {
+        "author": {
+            "date": "Wed, 6 Dec 2023 08:53:07 -0300",
+            "dateISO8601": "2023-12-06T08:53:07-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "93017c4f4497a3c00130b2b040426168871574ca",
+        "commitHashAbbreviated": "93017c4",
+        "committer": {
+            "date": "Wed, 6 Dec 2023 08:53:07 -0300",
+            "dateISO8601": "2023-12-06T08:53:07-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "8be2c9d1db9c09118afec10da0fb72c27acc5064",
+        "parentAbbreviated": "8be2c9d",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #periodically_update_repos_and_db.",
+        "subjectSanitized": "up-Issue-periodically_update_repos_and_db",
+        "tree": "b7b795b0a2bf156b6270011cf7a8348b8f85bced",
+        "treeAbbreviated": "b7b795b"
+    },
+    {
+        "author": {
+            "date": "Tue, 5 Dec 2023 19:55:28 -0300",
+            "dateISO8601": "2023-12-05T19:55:28-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "8be2c9d1db9c09118afec10da0fb72c27acc5064",
+        "commitHashAbbreviated": "8be2c9d",
+        "committer": {
+            "date": "Tue, 5 Dec 2023 19:55:28 -0300",
+            "dateISO8601": "2023-12-05T19:55:28-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "b1852308dd32651d9c785743e99023759d77cfe8",
+        "parentAbbreviated": "b185230",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #periodically_update_repos_and_db.",
+        "subjectSanitized": "up-Issue-periodically_update_repos_and_db",
+        "tree": "b7b795b0a2bf156b6270011cf7a8348b8f85bced",
+        "treeAbbreviated": "b7b795b"
+    },
+    {
+        "author": {
+            "date": "Tue, 5 Dec 2023 15:14:25 -0300",
+            "dateISO8601": "2023-12-05T15:14:25-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "b1852308dd32651d9c785743e99023759d77cfe8",
+        "commitHashAbbreviated": "b185230",
+        "committer": {
+            "date": "Tue, 5 Dec 2023 15:14:25 -0300",
+            "dateISO8601": "2023-12-05T15:14:25-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "f74ad77c3022f685579c525a6525944dc826b4c6",
+        "parentAbbreviated": "f74ad77",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #periodically_update_repos_and_db.",
+        "subjectSanitized": "created-Issue-periodically_update_repos_and_db",
+        "tree": "eb3e6ce5ff0e8a50f52b69f32f49e3f55282229e",
+        "treeAbbreviated": "eb3e6ce"
+    },
+    {
+        "author": {
+            "date": "Tue, 5 Dec 2023 11:22:01 -0300",
+            "dateISO8601": "2023-12-05T11:22:01-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "f74ad77c3022f685579c525a6525944dc826b4c6",
+        "commitHashAbbreviated": "f74ad77",
+        "committer": {
+            "date": "Tue, 5 Dec 2023 11:22:01 -0300",
+            "dateISO8601": "2023-12-05T11:22:01-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "779fcffd738a718754f7391afab2cd5511fed4f1",
+        "parentAbbreviated": "779fcff",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #implement_api_endpoints.",
+        "subjectSanitized": "closed-Issue-implement_api_endpoints",
+        "tree": "31d750aa95bfd0731ce3d0b7aa1a070a2d9e51f2",
+        "treeAbbreviated": "31d750a"
+    },
+    {
+        "author": {
+            "date": "Tue, 5 Dec 2023 11:22:00 -0300",
+            "dateISO8601": "2023-12-05T11:22:00-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "779fcffd738a718754f7391afab2cd5511fed4f1",
+        "commitHashAbbreviated": "779fcff",
+        "committer": {
+            "date": "Tue, 5 Dec 2023 11:22:00 -0300",
+            "dateISO8601": "2023-12-05T11:22:00-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "6bd36427e5c86ab8db197b4a0b9c332fe17d370c",
+        "parentAbbreviated": "6bd3642",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_api_endpoints.",
+        "subjectSanitized": "up-Issue-implement_api_endpoints",
+        "tree": "64db77d5b19bb27e4df7a5e4479cdefa74baed6c",
+        "treeAbbreviated": "64db77d"
+    },
+    {
+        "author": {
+            "date": "Tue, 5 Dec 2023 11:21:21 -0300",
+            "dateISO8601": "2023-12-05T11:21:21-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "6bd36427e5c86ab8db197b4a0b9c332fe17d370c",
+        "commitHashAbbreviated": "6bd3642",
+        "committer": {
+            "date": "Tue, 5 Dec 2023 11:21:21 -0300",
+            "dateISO8601": "2023-12-05T11:21:21-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "ed29f391ce6050a91b96f95c13ebf7612efc824a",
+        "parentAbbreviated": "ed29f39",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_api_endpoints.",
+        "subjectSanitized": "up-Issue-implement_api_endpoints",
+        "tree": "64db77d5b19bb27e4df7a5e4479cdefa74baed6c",
+        "treeAbbreviated": "64db77d"
+    },
+    {
+        "author": {
+            "date": "Tue, 5 Dec 2023 07:25:46 -0300",
+            "dateISO8601": "2023-12-05T07:25:46-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "ed29f391ce6050a91b96f95c13ebf7612efc824a",
+        "commitHashAbbreviated": "ed29f39",
+        "committer": {
+            "date": "Tue, 5 Dec 2023 07:25:46 -0300",
+            "dateISO8601": "2023-12-05T07:25:46-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "f73a81ad9f6c9ef249c0a43408ec2902eb35f200",
+        "parentAbbreviated": "f73a81a",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_api_endpoints.",
+        "subjectSanitized": "up-Issue-implement_api_endpoints",
+        "tree": "82323d9ae5f6db1c3406462f2d979c56109fc4df",
+        "treeAbbreviated": "82323d9"
+    },
+    {
+        "author": {
+            "date": "Mon, 4 Dec 2023 13:52:53 -0300",
+            "dateISO8601": "2023-12-04T13:52:53-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "f73a81ad9f6c9ef249c0a43408ec2902eb35f200",
+        "commitHashAbbreviated": "f73a81a",
+        "committer": {
+            "date": "Mon, 4 Dec 2023 13:52:53 -0300",
+            "dateISO8601": "2023-12-04T13:52:53-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "7c78f579836ff0f63e6c07be0d1c757b78a5c664",
+        "parentAbbreviated": "7c78f57",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_api_endpoints.",
+        "subjectSanitized": "up-Issue-implement_api_endpoints",
+        "tree": "96d31a70135e2506ed4597f046abdf5009726935",
+        "treeAbbreviated": "96d31a7"
+    },
+    {
+        "author": {
+            "date": "Fri, 1 Dec 2023 13:37:17 -0300",
+            "dateISO8601": "2023-12-01T13:37:17-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "7c78f579836ff0f63e6c07be0d1c757b78a5c664",
+        "commitHashAbbreviated": "7c78f57",
+        "committer": {
+            "date": "Fri, 1 Dec 2023 13:37:17 -0300",
+            "dateISO8601": "2023-12-01T13:37:17-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "b59c6fdf49c4df858b01e3ec5da275a683b3d289",
+        "parentAbbreviated": "b59c6fd",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_api_endpoints.",
+        "subjectSanitized": "up-Issue-implement_api_endpoints",
+        "tree": "8630baef62e7a3db8d4d5cbf304cbfaf93ac1476",
+        "treeAbbreviated": "8630bae"
+    },
+    {
+        "author": {
+            "date": "Fri, 1 Dec 2023 11:17:45 -0300",
+            "dateISO8601": "2023-12-01T11:17:45-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "b59c6fdf49c4df858b01e3ec5da275a683b3d289",
+        "commitHashAbbreviated": "b59c6fd",
+        "committer": {
+            "date": "Fri, 1 Dec 2023 11:17:45 -0300",
+            "dateISO8601": "2023-12-01T11:17:45-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "638466dcbf12038886875a8a06c990ba0a7aa159",
+        "parentAbbreviated": "638466d",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #implement_api_endpoints.",
+        "subjectSanitized": "up-Issue-implement_api_endpoints",
+        "tree": "a256233e1da4f1723d571d969ca7df51de063d2d",
+        "treeAbbreviated": "a256233"
+    },
+    {
+        "author": {
+            "date": "Thu, 30 Nov 2023 17:32:52 -0300",
+            "dateISO8601": "2023-11-30T17:32:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "638466dcbf12038886875a8a06c990ba0a7aa159",
+        "commitHashAbbreviated": "638466d",
+        "committer": {
+            "date": "Thu, 30 Nov 2023 17:32:52 -0300",
+            "dateISO8601": "2023-11-30T17:32:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "9e765e51098c4c177b6763dff317763cbd624232",
+        "parentAbbreviated": "9e765e5",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #implement_api_endpoints.",
+        "subjectSanitized": "created-Issue-implement_api_endpoints",
+        "tree": "48b474601278303ee4afd02d7e83c32aedde17f5",
+        "treeAbbreviated": "48b4746"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 18:07:53 -0300",
+            "dateISO8601": "2023-11-29T18:07:53-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "9e765e51098c4c177b6763dff317763cbd624232",
+        "commitHashAbbreviated": "9e765e5",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 18:07:53 -0300",
+            "dateISO8601": "2023-11-29T18:07:53-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "fb06ceec84ee7a4d5254f1d2af609bdf2c4e4823",
+        "parentAbbreviated": "fb06cee",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #setup_axum_structure.",
+        "subjectSanitized": "closed-Issue-setup_axum_structure",
+        "tree": "1bc03c0d1cf0ebd2215ed62e015acc6f5e1a48da",
+        "treeAbbreviated": "1bc03c0"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 18:07:52 -0300",
+            "dateISO8601": "2023-11-29T18:07:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "fb06ceec84ee7a4d5254f1d2af609bdf2c4e4823",
+        "commitHashAbbreviated": "fb06cee",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 18:07:52 -0300",
+            "dateISO8601": "2023-11-29T18:07:52-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "7780dac91f1e798fcc14ce1587ec1ad2dd49e773",
+        "parentAbbreviated": "7780dac",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #setup_axum_structure.",
+        "subjectSanitized": "up-Issue-setup_axum_structure",
+        "tree": "900b6556e25687d78f80d36f90f1e715bbb8b6d4",
+        "treeAbbreviated": "900b655"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 15:54:18 -0300",
+            "dateISO8601": "2023-11-29T15:54:18-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "7780dac91f1e798fcc14ce1587ec1ad2dd49e773",
+        "commitHashAbbreviated": "7780dac",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 15:54:18 -0300",
+            "dateISO8601": "2023-11-29T15:54:18-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "995c9c8b82713bbd238da40897871722b0566ad0",
+        "parentAbbreviated": "995c9c8",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #setup_axum_structure.",
+        "subjectSanitized": "created-Issue-setup_axum_structure",
+        "tree": "61c7914d9e55cc05280bf495b5f9dd9ed440dbff",
+        "treeAbbreviated": "61c7914"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 15:52:05 -0300",
+            "dateISO8601": "2023-11-29T15:52:05-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "995c9c8b82713bbd238da40897871722b0566ad0",
+        "commitHashAbbreviated": "995c9c8",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 15:52:05 -0300",
+            "dateISO8601": "2023-11-29T15:52:05-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "33226b7e6ce1470a6d813135c4d8d65ec14ca96c",
+        "parentAbbreviated": "33226b7",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #save_everything_in_db.",
+        "subjectSanitized": "closed-Issue-save_everything_in_db",
+        "tree": "0cee82dab04ec32c3cec192d2c87b184e6b355c6",
+        "treeAbbreviated": "0cee82d"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 15:52:05 -0300",
+            "dateISO8601": "2023-11-29T15:52:05-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "33226b7e6ce1470a6d813135c4d8d65ec14ca96c",
+        "commitHashAbbreviated": "33226b7",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 15:52:05 -0300",
+            "dateISO8601": "2023-11-29T15:52:05-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "78fcdc97fad6fb4bbd60041edc40207cf3bb6609",
+        "parentAbbreviated": "78fcdc9",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #save_everything_in_db.",
+        "subjectSanitized": "up-Issue-save_everything_in_db",
+        "tree": "c5a7424ab1b0ae84e8d4339351256d871f62cffb",
+        "treeAbbreviated": "c5a7424"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 15:49:08 -0300",
+            "dateISO8601": "2023-11-29T15:49:08-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "78fcdc97fad6fb4bbd60041edc40207cf3bb6609",
+        "commitHashAbbreviated": "78fcdc9",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 15:49:08 -0300",
+            "dateISO8601": "2023-11-29T15:49:08-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "3eee09c0a0d8c6af21b0019216458372cb368b80",
+        "parentAbbreviated": "3eee09c",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #save_everything_in_db.",
+        "subjectSanitized": "up-Issue-save_everything_in_db",
+        "tree": "c5a7424ab1b0ae84e8d4339351256d871f62cffb",
+        "treeAbbreviated": "c5a7424"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 15:48:42 -0300",
+            "dateISO8601": "2023-11-29T15:48:42-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "3eee09c0a0d8c6af21b0019216458372cb368b80",
+        "commitHashAbbreviated": "3eee09c",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 15:48:42 -0300",
+            "dateISO8601": "2023-11-29T15:48:42-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "150eec695f2e71824c9b44b24287c384f8bbfcc4",
+        "parentAbbreviated": "150eec6",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #save_everything_in_db.",
+        "subjectSanitized": "up-Issue-save_everything_in_db",
+        "tree": "c5a7424ab1b0ae84e8d4339351256d871f62cffb",
+        "treeAbbreviated": "c5a7424"
+    },
+    {
+        "author": {
+            "date": "Wed, 29 Nov 2023 01:09:19 -0300",
+            "dateISO8601": "2023-11-29T01:09:19-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "150eec695f2e71824c9b44b24287c384f8bbfcc4",
+        "commitHashAbbreviated": "150eec6",
+        "committer": {
+            "date": "Wed, 29 Nov 2023 01:09:19 -0300",
+            "dateISO8601": "2023-11-29T01:09:19-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "35ac271ae325ee1e441c7c70f7870ecc27d8fa01",
+        "parentAbbreviated": "35ac271",
+        "refs": "origin/I-save_everything_in_db",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #save_everything_in_db.",
+        "subjectSanitized": "up-Issue-save_everything_in_db",
+        "tree": "c6f3ecd795f8d8638682360548fb0b0bd24bf21b",
+        "treeAbbreviated": "c6f3ecd"
+    },
+    {
+        "author": {
+            "date": "Mon, 27 Nov 2023 19:06:42 -0300",
+            "dateISO8601": "2023-11-27T19:06:42-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "35ac271ae325ee1e441c7c70f7870ecc27d8fa01",
+        "commitHashAbbreviated": "35ac271",
+        "committer": {
+            "date": "Mon, 27 Nov 2023 19:06:42 -0300",
+            "dateISO8601": "2023-11-27T19:06:42-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "11414efe5dc09ee691fe81068cc72a3ca252841a",
+        "parentAbbreviated": "11414ef",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #save_everything_in_db.",
+        "subjectSanitized": "up-Issue-save_everything_in_db",
+        "tree": "b7d33bf421428048c3426068db422fcfd7a0b199",
+        "treeAbbreviated": "b7d33bf"
+    },
+    {
+        "author": {
+            "date": "Mon, 27 Nov 2023 15:13:28 -0300",
+            "dateISO8601": "2023-11-27T15:13:28-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "11414efe5dc09ee691fe81068cc72a3ca252841a",
+        "commitHashAbbreviated": "11414ef",
+        "committer": {
+            "date": "Mon, 27 Nov 2023 15:13:28 -0300",
+            "dateISO8601": "2023-11-27T15:13:28-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "b8d486b691556e682eb0935dc9184ec1128df406",
+        "parentAbbreviated": "b8d486b",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "ripi up",
+        "subjectSanitized": "ripi-up",
+        "tree": "df30b518c6f3a98b37ad617cd51eab143526f627",
+        "treeAbbreviated": "df30b51"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 23:37:35 -0300",
+            "dateISO8601": "2023-11-23T23:37:35-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "b8d486b691556e682eb0935dc9184ec1128df406",
+        "commitHashAbbreviated": "b8d486b",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 23:37:35 -0300",
+            "dateISO8601": "2023-11-23T23:37:35-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "fbca75ca125c046dca3f95e911d006373324c315",
+        "parentAbbreviated": "fbca75c",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "ripi up",
+        "subjectSanitized": "ripi-up",
+        "tree": "466c00255a006ab97bd2e28291964a55b3f02272",
+        "treeAbbreviated": "466c002"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 19:30:51 -0300",
+            "dateISO8601": "2023-11-23T19:30:51-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "fbca75ca125c046dca3f95e911d006373324c315",
+        "commitHashAbbreviated": "fbca75c",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 19:30:51 -0300",
+            "dateISO8601": "2023-11-23T19:30:51-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "eaea3b5a9bc8d057c99d51f8b5484b8414799844",
+        "parentAbbreviated": "eaea3b5",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "ripi update",
+        "subjectSanitized": "ripi-update",
+        "tree": "f46408cf12ba9ae1da70b5a70bf4dee05c41f172",
+        "treeAbbreviated": "f46408c"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 19:29:14 -0300",
+            "dateISO8601": "2023-11-23T19:29:14-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "eaea3b5a9bc8d057c99d51f8b5484b8414799844",
+        "commitHashAbbreviated": "eaea3b5",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 19:29:14 -0300",
+            "dateISO8601": "2023-11-23T19:29:14-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "7443d9a61de687ecd4f867659e9a2090d0f72409",
+        "parentAbbreviated": "7443d9a",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "ripi update",
+        "subjectSanitized": "ripi-update",
+        "tree": "5af3bb5db36ea0eefca16e560843445b3d21f9c0",
+        "treeAbbreviated": "5af3bb5"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 17:28:57 -0300",
+            "dateISO8601": "2023-11-23T17:28:57-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "7443d9a61de687ecd4f867659e9a2090d0f72409",
+        "commitHashAbbreviated": "7443d9a",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 17:28:57 -0300",
+            "dateISO8601": "2023-11-23T17:28:57-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "363fcd242417a3b87d4d7e380bcb922d4aaaf840",
+        "parentAbbreviated": "363fcd2",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #command_to_clone_repository.",
+        "subjectSanitized": "closed-Issue-command_to_clone_repository",
+        "tree": "70b793b235fd1c09a1c08a8fee554ce69eab4551",
+        "treeAbbreviated": "70b793b"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 17:28:56 -0300",
+            "dateISO8601": "2023-11-23T17:28:56-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "363fcd242417a3b87d4d7e380bcb922d4aaaf840",
+        "commitHashAbbreviated": "363fcd2",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 17:28:56 -0300",
+            "dateISO8601": "2023-11-23T17:28:56-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "48eb5bc5c38ea063c778d0793f903b0ffcd7d4e7",
+        "parentAbbreviated": "48eb5bc",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #command_to_clone_repository.",
+        "subjectSanitized": "up-Issue-command_to_clone_repository",
+        "tree": "3d72566cf67f94de8f97dc24b9d6c39fafbbe7e1",
+        "treeAbbreviated": "3d72566"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 17:28:37 -0300",
+            "dateISO8601": "2023-11-23T17:28:37-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "48eb5bc5c38ea063c778d0793f903b0ffcd7d4e7",
+        "commitHashAbbreviated": "48eb5bc",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 17:28:37 -0300",
+            "dateISO8601": "2023-11-23T17:28:37-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "7866d6fd756763e35f7797f9d13f02e92bc2b6b6",
+        "parentAbbreviated": "7866d6f",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #command_to_clone_repository.",
+        "subjectSanitized": "up-Issue-command_to_clone_repository",
+        "tree": "3d72566cf67f94de8f97dc24b9d6c39fafbbe7e1",
+        "treeAbbreviated": "3d72566"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 16:53:39 -0300",
+            "dateISO8601": "2023-11-23T16:53:39-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "7866d6fd756763e35f7797f9d13f02e92bc2b6b6",
+        "commitHashAbbreviated": "7866d6f",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 16:53:39 -0300",
+            "dateISO8601": "2023-11-23T16:53:39-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "68e9c6e3781748040d0d174284baba1519f5afbb",
+        "parentAbbreviated": "68e9c6e",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #command_to_clone_repository.",
+        "subjectSanitized": "created-Issue-command_to_clone_repository",
+        "tree": "6390e63c0301e902df9ae52e721e756140970442",
+        "treeAbbreviated": "6390e63"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 16:52:56 -0300",
+            "dateISO8601": "2023-11-23T16:52:56-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "68e9c6e3781748040d0d174284baba1519f5afbb",
+        "commitHashAbbreviated": "68e9c6e",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 16:52:56 -0300",
+            "dateISO8601": "2023-11-23T16:52:56-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "ab48988423b1e783525b09a1e3d61d0bd9e8f652",
+        "parentAbbreviated": "ab48988",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #setup_basic_axum_db_structure.",
+        "subjectSanitized": "closed-Issue-setup_basic_axum_db_structure",
+        "tree": "0df2460d39cfd486f4e465f230e54e83cd285a8b",
+        "treeAbbreviated": "0df2460"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 16:52:55 -0300",
+            "dateISO8601": "2023-11-23T16:52:55-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "ab48988423b1e783525b09a1e3d61d0bd9e8f652",
+        "commitHashAbbreviated": "ab48988",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 16:52:55 -0300",
+            "dateISO8601": "2023-11-23T16:52:55-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "fbc8546bb16554369b84a7097d1f1111f7f4e636",
+        "parentAbbreviated": "fbc8546",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #setup_basic_axum_db_structure.",
+        "subjectSanitized": "up-Issue-setup_basic_axum_db_structure",
+        "tree": "01371cfa854039236f34c829e48fbaf8d336ce5c",
+        "treeAbbreviated": "01371cf"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 16:52:27 -0300",
+            "dateISO8601": "2023-11-23T16:52:27-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "fbc8546bb16554369b84a7097d1f1111f7f4e636",
+        "commitHashAbbreviated": "fbc8546",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 16:52:27 -0300",
+            "dateISO8601": "2023-11-23T16:52:27-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "8250a17e91e74db714d48076cf2df16780f9df6f",
+        "parentAbbreviated": "8250a17",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #setup_basic_axum_db_structure.",
+        "subjectSanitized": "up-Issue-setup_basic_axum_db_structure",
+        "tree": "01371cfa854039236f34c829e48fbaf8d336ce5c",
+        "treeAbbreviated": "01371cf"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 15:58:13 -0300",
+            "dateISO8601": "2023-11-23T15:58:13-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "8250a17e91e74db714d48076cf2df16780f9df6f",
+        "commitHashAbbreviated": "8250a17",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 15:58:13 -0300",
+            "dateISO8601": "2023-11-23T15:58:13-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "15a6742bdf0b0d8362849e43f64777349eb009df",
+        "parentAbbreviated": "15a6742",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #setup_basic_axum_db_structure.",
+        "subjectSanitized": "up-Issue-setup_basic_axum_db_structure",
+        "tree": "e4e300c3435f4f00fb51c54dd77dae0285b3b4e4",
+        "treeAbbreviated": "e4e300c"
+    },
+    {
+        "author": {
+            "date": "Thu, 23 Nov 2023 14:37:06 -0300",
+            "dateISO8601": "2023-11-23T14:37:06-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "15a6742bdf0b0d8362849e43f64777349eb009df",
+        "commitHashAbbreviated": "15a6742",
+        "committer": {
+            "date": "Thu, 23 Nov 2023 14:37:06 -0300",
+            "dateISO8601": "2023-11-23T14:37:06-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "70c7f55fbe99af162a0bca1a235738013870a66a",
+        "parentAbbreviated": "70c7f55",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #setup_basic_axum_db_structure.",
+        "subjectSanitized": "up-Issue-setup_basic_axum_db_structure",
+        "tree": "67b4059e02e15d01549dcb04823e00e807257c29",
+        "treeAbbreviated": "67b4059"
+    },
+    {
+        "author": {
+            "date": "Mon, 20 Nov 2023 15:57:47 -0300",
+            "dateISO8601": "2023-11-20T15:57:47-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "70c7f55fbe99af162a0bca1a235738013870a66a",
+        "commitHashAbbreviated": "70c7f55",
+        "committer": {
+            "date": "Mon, 20 Nov 2023 15:57:47 -0300",
+            "dateISO8601": "2023-11-20T15:57:47-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "1bbab41e6477e9480f2988140c600e2dc6263ed6",
+        "parentAbbreviated": "1bbab41",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #setup_basic_axum_db_structure.",
+        "subjectSanitized": "up-Issue-setup_basic_axum_db_structure",
+        "tree": "f0f1ceeb9b58683c692a22b35be250e942f13961",
+        "treeAbbreviated": "f0f1cee"
+    },
+    {
+        "author": {
+            "date": "Mon, 20 Nov 2023 15:57:29 -0300",
+            "dateISO8601": "2023-11-20T15:57:29-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "1bbab41e6477e9480f2988140c600e2dc6263ed6",
+        "commitHashAbbreviated": "1bbab41",
+        "committer": {
+            "date": "Mon, 20 Nov 2023 15:57:29 -0300",
+            "dateISO8601": "2023-11-20T15:57:29-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "cea4168ecd9b349439fc5b8b998c12eb71a71b5f",
+        "parentAbbreviated": "cea4168",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #setup_basic_axum_db_structure.",
+        "subjectSanitized": "created-Issue-setup_basic_axum_db_structure",
+        "tree": "0392b1a99d324bf376d71161b5df59dfd813cf7a",
+        "treeAbbreviated": "0392b1a"
+    },
+    {
+        "author": {
+            "date": "Thu, 9 Nov 2023 22:51:24 -0300",
+            "dateISO8601": "2023-11-09T22:51:24-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "cea4168ecd9b349439fc5b8b998c12eb71a71b5f",
+        "commitHashAbbreviated": "cea4168",
+        "committer": {
+            "date": "Thu, 9 Nov 2023 22:51:24 -0300",
+            "dateISO8601": "2023-11-09T22:51:24-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "3c0b7fd487031748452cef8deb308602dfe08445",
+        "parentAbbreviated": "3c0b7fd",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "ripi up",
+        "subjectSanitized": "ripi-up",
+        "tree": "57f550fc82e74cd1242d4a3b957298a32f09687a",
+        "treeAbbreviated": "57f550f"
+    },
+    {
+        "author": {
+            "date": "Thu, 9 Nov 2023 21:32:43 -0300",
+            "dateISO8601": "2023-11-09T21:32:43-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "3c0b7fd487031748452cef8deb308602dfe08445",
+        "commitHashAbbreviated": "3c0b7fd",
+        "committer": {
+            "date": "Thu, 9 Nov 2023 21:32:43 -0300",
+            "dateISO8601": "2023-11-09T21:32:43-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "1150a13c85a115099c6a24fe5f66e66ee9b31db8",
+        "parentAbbreviated": "1150a13",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(closed) Issue #initial_rust_project_setup_and_basic_axum.",
+        "subjectSanitized": "closed-Issue-initial_rust_project_setup_and_basic_axum",
+        "tree": "053b9101fc0b67813fcda55479f602e3bf7adf12",
+        "treeAbbreviated": "053b910"
+    },
+    {
+        "author": {
+            "date": "Thu, 9 Nov 2023 21:32:43 -0300",
+            "dateISO8601": "2023-11-09T21:32:43-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "1150a13c85a115099c6a24fe5f66e66ee9b31db8",
+        "commitHashAbbreviated": "1150a13",
+        "committer": {
+            "date": "Thu, 9 Nov 2023 21:32:43 -0300",
+            "dateISO8601": "2023-11-09T21:32:43-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "5d8d6b290f307ad04875550bdec4eb13118b2276",
+        "parentAbbreviated": "5d8d6b2",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #initial_rust_project_setup_and_basic_axum.",
+        "subjectSanitized": "up-Issue-initial_rust_project_setup_and_basic_axum",
+        "tree": "7459db5a080e664e110ecf75ee6e106d8a878800",
+        "treeAbbreviated": "7459db5"
+    },
+    {
+        "author": {
+            "date": "Thu, 9 Nov 2023 21:32:00 -0300",
+            "dateISO8601": "2023-11-09T21:32:00-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "5d8d6b290f307ad04875550bdec4eb13118b2276",
+        "commitHashAbbreviated": "5d8d6b2",
+        "committer": {
+            "date": "Thu, 9 Nov 2023 21:32:00 -0300",
+            "dateISO8601": "2023-11-09T21:32:00-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "5483dfd6096c0a11182a7325a32c3ecb72b25bca",
+        "parentAbbreviated": "5483dfd",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #initial_rust_project_setup_and_basic_axum.",
+        "subjectSanitized": "up-Issue-initial_rust_project_setup_and_basic_axum",
+        "tree": "7459db5a080e664e110ecf75ee6e106d8a878800",
+        "treeAbbreviated": "7459db5"
+    },
+    {
+        "author": {
+            "date": "Thu, 9 Nov 2023 21:30:37 -0300",
+            "dateISO8601": "2023-11-09T21:30:37-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "5483dfd6096c0a11182a7325a32c3ecb72b25bca",
+        "commitHashAbbreviated": "5483dfd",
+        "committer": {
+            "date": "Thu, 9 Nov 2023 21:30:37 -0300",
+            "dateISO8601": "2023-11-09T21:30:37-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "a0ec9f91eca79546aa8b577ddbd64af1978f6364",
+        "parentAbbreviated": "a0ec9f9",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(up) Issue #initial_rust_project_setup_and_basic_axum.",
+        "subjectSanitized": "up-Issue-initial_rust_project_setup_and_basic_axum",
+        "tree": "7459db5a080e664e110ecf75ee6e106d8a878800",
+        "treeAbbreviated": "7459db5"
+    },
+    {
+        "author": {
+            "date": "Wed, 8 Nov 2023 15:41:50 -0300",
+            "dateISO8601": "2023-11-08T15:41:50-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "body": "",
+        "commitHash": "a0ec9f91eca79546aa8b577ddbd64af1978f6364",
+        "commitHashAbbreviated": "a0ec9f9",
+        "committer": {
+            "date": "Wed, 8 Nov 2023 15:41:50 -0300",
+            "dateISO8601": "2023-11-08T15:41:50-03:00",
+            "email": "gubasso@eambar.net",
+            "name": "Gustavo Basso"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "ea95309ea89fc89c3748ee0a27ccf5ea53ee4b07",
+        "parentAbbreviated": "ea95309",
+        "refs": "",
+        "signature": {
+            "key": "",
+            "signer": "",
+            "verificationFlag": "N"
+        },
+        "subject": "(created) Issue #initial_rust_project_setup_and_basic_axum.",
+        "subjectSanitized": "created-Issue-initial_rust_project_setup_and_basic_axum",
+        "tree": "0d89fb7fbc4eea536ebda31d24254c0dc66d72ef",
+        "treeAbbreviated": "0d89fb7"
+    },
+    {
+        "author": {
+            "date": "Mon, 30 Oct 2023 20:20:58 +0000",
+            "dateISO8601": "2023-10-30T20:20:58+00:00",
+            "email": "root@cwnt.io",
+            "name": "root cwnt"
+        },
+        "body": "",
+        "commitHash": "ea95309ea89fc89c3748ee0a27ccf5ea53ee4b07",
+        "commitHashAbbreviated": "ea95309",
+        "committer": {
+            "date": "Mon, 30 Oct 2023 20:20:58 +0000",
+            "dateISO8601": "2023-10-30T20:20:58+00:00",
+            "email": "noreply@github.com",
+            "name": "GitHub"
+        },
+        "encoding": "",
+        "notes": "",
+        "parent": "",
+        "parentAbbreviated": "",
+        "refs": "",
+        "signature": {
+            "key": "xxx",
+            "signer": "",
+            "verificationFlag": "E"
+        },
+        "subject": "Create README.md",
+        "subjectSanitized": "Create-README.md",
+        "tree": "a9824c47352f2117a44436d34260e231fa937e1a",
+        "treeAbbreviated": "a9824c4"
+    }
+]

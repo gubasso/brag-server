@@ -21,6 +21,8 @@ pub struct Repo {
     name: String,
     host: GitHost,
     path: PathBuf,
+    git_path: PathBuf,
+    curr_branch: String,
     pub commits: Vec<Commit>,
     pub user_repo_name: String,
 }
@@ -37,38 +39,62 @@ impl Repo {
         let user_repo_name = get_value(obj, &host.host.user_repo_name_key())?;
         let mut path = repos_base_path();
         path.push(&user_repo_name);
+        let path_str = path.to_str().unwrap();
+        let git_path = path.join(".git");
+        let git_path_str = git_path.to_str().unwrap();
+        let wt = format!("--work-tree={}", path_str);
+        let gd = format!("--git-dir={}", git_path_str);
+        if !path.is_dir() {
+            let url = url.as_str();
+            println!("# Cloning: {}\nTo: {}", url, path_str);
+            run_cmd!(git clone $url $path_str)?;
+            println!("# Cloned: {}", path_str);
+        }
+        let curr_branch = run_fun!(git $wt $gd rev-parse --abbrev-ref HEAD)?;
         Ok(Self {
             host: host.host,
             user: host.user.clone(),
             name,
             commits: Vec::default(),
             url,
-            path,
+            path: path.clone(),
+            git_path,
+            curr_branch,
             user_repo_name,
         })
     }
-    pub fn set_commits(&mut self) -> Result<(), Box<dyn Error>> {
-        if !self.path.is_dir() {
-            let url = self.url.as_str();
-            let path = self.path.to_str().unwrap();
-            println!("# Cloning: {}\nTo: {}", url, path);
-            run_cmd!(git clone $url $path)?;
-            println!("# Cloned: {}", path);
-        }
-        let git_path = self.path.join(".git");
+    pub fn pull_commits(&self) -> Result<(), Box<dyn Error>> {
         let path_str = self.path.to_str().unwrap();
-        let git_path_str = git_path.to_str().unwrap();
+        let git_path_str = self.git_path.to_str().unwrap();
         let wt = format!("--work-tree={}", path_str);
         let gd = format!("--git-dir={}", git_path_str);
-        let curr_branch = run_fun!(git $wt $gd rev-parse --abbrev-ref HEAD)?;
+        let branch = &self.curr_branch;
         println!(
             "# Pulling!\ngit_path: {}\n - current_branch: {}",
-            git_path_str, curr_branch
+            git_path_str, branch
         );
-        run_cmd!(git $wt $gd pull origin $curr_branch)?;
-        let sql = "select * from commits".to_string();
-        let json_str =
-            run_fun!(docker run -v $path_str:/repo mergestat/mergestat $sql --format json)?;
+        run_cmd!(git $wt $gd pull origin $branch)?;
+        Ok(())
+    }
+    pub fn set_commits(&mut self) -> Result<(), Box<dyn Error>> {
+        println!("(set_commits)");
+        let path_str = self.path.to_str().unwrap();
+        let git_path_str = self.git_path.to_str().unwrap();
+        let wt = format!("--work-tree={}", path_str);
+        let gd = format!("--git-dir={}", git_path_str);
+        let n_commits = run_fun!(git $wt $gd rev-list --count HEAD)?;
+        println!("n_commits: {}", n_commits);
+        if n_commits.parse::<i32>().unwrap() == 1 {
+            // commit-json script yet can't handle parsing a repo that has
+            // only one commit
+            return Ok(());
+        }
+        let branch = &self.curr_branch;
+        println!(
+            "# Setting up commits !\n - path: {}\n - git_path: {}\n - current_branch: {}",
+            path_str, git_path_str, branch
+        );
+        let json_str = run_fun!(commit-json $path_str $git_path_str HEAD)?;
         self.commits = serde_json::from_str(&json_str)?;
         Ok(())
     }
@@ -92,8 +118,7 @@ impl Repositories {
                 .await?;
             let json_repos: Vec<Value> = serde_json::from_str(&json_str)?;
             for jrepo in &json_repos {
-                let mut repo = Repo::from(host, jrepo)?;
-                repo.set_commits()?;
+                let repo = Repo::from(host, jrepo)?;
                 repos.push(repo);
             }
         }
@@ -101,6 +126,12 @@ impl Repositories {
     }
     pub fn iter(&self) -> Iter<'_, Repo> {
         self.0.iter()
+    }
+    pub fn pull_all(&self) -> Result<(), Box<dyn Error>> {
+        for repo in self.0.iter() {
+            repo.pull_commits()?;
+        }
+        Ok(())
     }
     pub fn set_all_commits(&mut self) -> Result<(), Box<dyn Error>> {
         for repo in self.0.iter_mut() {

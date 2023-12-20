@@ -14,8 +14,7 @@ INSERT INTO commits (
     committer_email,
     committer_name,
     committer_when,
-    message,
-    parents
+    message
 )
 SELECT * FROM (
     SELECT
@@ -27,8 +26,7 @@ SELECT * FROM (
         $6,
         $7,
         $8,
-        $9,
-        $10
+        $9
 ) AS tmp
 WHERE NOT EXISTS (
     SELECT 1 FROM commits WHERE
@@ -45,14 +43,13 @@ pub async fn insert_commits_to_db(
             sqlx::query(INSERT_COMMIT_QRY)
                 .bind(&repo.user_repo_name)
                 .bind(&commit.hash)
-                .bind(&commit.author_email)
-                .bind(&commit.author_name)
-                .bind(commit.author_when)
-                .bind(&commit.committer_email)
-                .bind(&commit.committer_name)
-                .bind(commit.committer_when)
+                .bind(&commit.author.email)
+                .bind(&commit.author.name)
+                .bind(commit.author.date)
+                .bind(&commit.committer.email)
+                .bind(&commit.committer.name)
+                .bind(commit.committer.date)
                 .bind(&commit.message)
-                .bind(commit.parents)
                 .execute(pool)
                 .await
                 .expect("failed to save commit in db");

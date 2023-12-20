@@ -2,7 +2,7 @@
 
 new approach: run everything using just docker/docker-compose
 
-- refactor load_db: remove mergestat depedency
+- [x] refactor load_db: remove mergestat depedency
 
 ---
 

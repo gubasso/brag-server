@@ -1,10 +1,14 @@
 #!/bin/sh
 export API_PORT='3000'
-export NET_HOST='db'
+NET_HOST='db'
+if [ "$RUNNING_ENV" = 'dev' ]; then
+    NET_HOST='127.0.0.1'
+fi
+export NET_HOST
 export DATA_PATH='./data'
 export PROD_WD='/opt/brag-server'
 export RUNNING_ENV_IS_OK_FILE='.runner-dev-ok'
-export DOCKER_COMPOSE_FILE='Docker/compose.yaml'
+export DOCKER_COMPOSE_FILE='compose.yaml'
 export POSTGRES_PASSWORD_GOPASS='Playground/postgre_sample'
 export DB_PORT='5432'
 export RUST_VERSION='1.73.0'

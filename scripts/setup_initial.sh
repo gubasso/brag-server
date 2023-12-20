@@ -12,12 +12,13 @@ echo "## Initial Setup"
 ./scripts/install_sqlx.sh
 if [ "$RUNNING_ENV" = 'dev' ]; then
     ./scripts/install_asdf_runner.sh "python" "$PYTHON_VERSION"
+    sudo cp ./scripts/commit-json /usr/local/bin/commit-json
     asdf install
     asdf reshim
     pip install pre-commit
     pre-commit install
     pre-commit autoupdate
-    pre-commit run --all-files
+    # pre-commit run --all-files
 fi
 
 if [ "$RUNNING_ENV" = 'prod' ]; then

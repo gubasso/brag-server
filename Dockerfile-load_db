@@ -15,7 +15,9 @@ RUN apt-get upgrade -y && apt-get update -y && \
     && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /root/.local/share/brag-server/repos
 WORKDIR /load_db
-COPY --from=builder /load_db/brag-server.toml /load_db/brag-server.toml
+COPY scripts/commit-json /usr/local/bin/commit-json
+RUN chmod +x /usr/local/bin/commit-json.sh
+COPY brag-server.toml /load_db/brag-server.toml
 COPY --from=builder /load_db/target/release/load_db /load_db/load_db
 
 CMD ["./load_db"]

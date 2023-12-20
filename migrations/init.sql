@@ -8,8 +8,7 @@ CREATE TABLE IF NOT EXISTS commits (
     committer_email 	 VARCHAR(64) DEFAULT NULL,
     committer_name  	 VARCHAR(64) DEFAULT NULL,
     committer_when  	 TIMESTAMPTZ DEFAULT NULL,
-    message         	 TEXT,
-    parents         	 INTEGER
+    message         	 TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_commits_repo_authoremail ON commits (

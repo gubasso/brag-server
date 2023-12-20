@@ -7,13 +7,16 @@ case $1 in
     connect_db)
         psql "$DATABASE_URL"
         ;;
+    migrate)
+        echo "Starting migration revert and run"
+        echo "DATABASE_URL: $DATABASE_URL"
+        sqlx migrate revert
+        sqlx migrate run
+        ;;
     load_db)
         if ! is_db_running; then
             echo "Starting postgresql the database..."
             sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
-            echo "Starting migration revert and run"
-            sqlx migrate revert
-            sqlx migrate run
         fi
         echo "Database is up and running."
         echo "Running load_db: connect and load data to db"
@@ -21,7 +24,7 @@ case $1 in
         ;;
     clean_db)
         echo "(clean_db) Database: cleaning db data."
-        sqlx migrate revert
+        sqlx migrate revert || exit 0
         sudo -E rm -rf "$DATA_PATH"
         rm -rf "$HOME"/.local/share/brag-server
         ;;

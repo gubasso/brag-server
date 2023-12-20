@@ -4,16 +4,19 @@ use chrono::{DateTime, Utc};
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug, Clone)]
+pub struct Agent {
+    pub email: String,
+    pub name: String,
+    #[serde(rename = "dateISO8601", with = "datetime_deserializer")]
+    pub date: DateTime<Utc>,
+}
+
+#[derive(Deserialize, Debug, Clone)]
 pub struct Commit {
+    #[serde(rename = "commitHash")]
     pub hash: String,
-    pub author_email: String,
-    pub author_name: String,
-    #[serde(with = "datetime_deserializer")]
-    pub author_when: DateTime<Utc>,
-    pub committer_email: String,
-    pub committer_name: String,
-    #[serde(with = "datetime_deserializer")]
-    pub committer_when: DateTime<Utc>,
+    pub author: Agent,
+    pub committer: Agent,
+    #[serde(rename = "subject")]
     pub message: String,
-    pub parents: i32,
 }
