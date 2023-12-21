@@ -10,7 +10,9 @@ case "$RUNNING_ENV" in
         ./scripts/dev.sh "$dev_command"
         ;;
     prod)
-        sudo systemctl enable spin_db.service --now
+        sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up load_db
+        # sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
+        # sudo systemctl enable spin_db.service --now
         # sudo systemctl enable load_db.service --now
         # sleep 10
         # sudo systemctl enable brag-server.service --now

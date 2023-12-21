@@ -24,7 +24,7 @@ case $1 in
         ;;
     clean_db)
         echo "(clean_db) Database: cleaning db data."
-        sqlx migrate revert || exit 0
+        sqlx migrate revert || true
         sudo -E rm -rf "$DATA_PATH"
         rm -rf "$HOME"/.local/share/brag-server
         ;;
@@ -37,7 +37,7 @@ case $1 in
         echo "DOCKER_COMPOSE_FILE: $DOCKER_COMPOSE_FILE"
         echo "DATA_PATH: $DATA_PATH"
         sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" down
-        sudo docker kill "$(docker ps -q)"
+        sudo docker kill "$(docker ps -q)" || true
         ;;
     dclean)
         echo "(dclean) Docker: clean_db and dstop."
