@@ -12,12 +12,15 @@ RUN apt-get upgrade -y && apt-get update -y && \
     openssl \
     ca-certificates \
     git \
+    gpg \
     && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /root/.local/share/brag-server/repos
 WORKDIR /load_db
 COPY scripts/commit-json /usr/local/bin/commit-json
-RUN chmod +x /usr/local/bin/commit-json.sh
+RUN chmod +x /usr/local/bin/commit-json
 COPY brag-server.toml /load_db/brag-server.toml
 COPY --from=builder /load_db/target/release/load_db /load_db/load_db
-
-CMD ["./load_db"]
+COPY scripts/load_db_entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+# CMD ["./load_db"]

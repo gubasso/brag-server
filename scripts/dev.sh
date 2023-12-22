@@ -48,8 +48,11 @@ case $1 in
         echo "Docker: pruning all docker data."
         ./run dev clean_db
         ./run dev dstop
-        sudo docker system prune -a -f && sudo docker volume prune -f
+        sudo docker container prune -f
+        sudo docker image prune -a -f
+        sudo docker volume prune -f
         sudo docker network prune -f
+        sudo docker system prune -a -f
         ;;
     *)
         echo 'Error: Invalid input. Please enter one of the valid dev commands.'

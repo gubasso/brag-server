@@ -5,8 +5,11 @@ services:
       dockerfile: Dockerfile-load_db
       args:
         - RUST_VERSION=${RUST_VERSION}
+    entrypoint: /entrypoint.sh
     depends_on:
       - db
+    secrets:
+      - database_url
   db:
     image: "postgres:${POSTGRES_VERSION}"
     restart: always

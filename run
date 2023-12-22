@@ -10,7 +10,10 @@ case "$RUNNING_ENV" in
         ./scripts/dev.sh "$dev_command"
         ;;
     prod)
-        sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up load_db
+        # sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up db --wait
+        sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up load_db --build
+        # sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" logs -f load_db
+        # sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" run --entrypoint /bin/bash load_db
         # sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
         # sudo systemctl enable spin_db.service --now
         # sudo systemctl enable load_db.service --now
