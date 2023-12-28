@@ -2,8 +2,8 @@
 
 ## roadmap
 
-- [ ] setup NPM with `host.docker.internal`
-  - [ ] brag.gubasso.xyz
+- [x] setup NPM with `host.docker.internal`
+  - [x] brag.gubasso.xyz
 - [x] deploy_build_scripts
 - [x] server: setup nginx / nginx proxy manager
 - initial server setup (spin up)
