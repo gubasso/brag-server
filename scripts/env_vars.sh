@@ -2,7 +2,7 @@
 export API_PORT='3000'
 NET_HOST='db'
 if [ "$RUNNING_ENV" = 'dev' ]; then
-    NET_HOST='127.0.0.1'
+    NET_HOST='0.0.0.0'
 fi
 export NET_HOST
 export DATA_PATH='./data'

@@ -34,10 +34,7 @@ case $1 in
         ;;
     dstop)
         echo "(dstop) Docker: stoping containers."
-        echo "DOCKER_COMPOSE_FILE: $DOCKER_COMPOSE_FILE"
-        echo "DATA_PATH: $DATA_PATH"
         sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" down
-        sudo docker kill "$(docker ps -q)" || true
         ;;
     dclean)
         echo "(dclean) Docker: clean_db and dstop."
@@ -48,6 +45,7 @@ case $1 in
         echo "Docker: pruning all docker data."
         ./run dev clean_db
         ./run dev dstop
+        sudo docker kill "$(docker ps -q)" || true
         sudo docker container prune -f
         sudo docker image prune -a -f
         sudo docker volume prune -f
