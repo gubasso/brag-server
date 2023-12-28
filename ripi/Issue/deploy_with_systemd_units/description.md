@@ -2,7 +2,7 @@
 
 new approach: run everything using just docker/docker-compose
 
-- [ ] deploy at production
+- [x] deploy at production
 - [x] prune docker
 - [x] run d compose with load_db
 - [x] add brag-server to d compose
