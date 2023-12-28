@@ -11,6 +11,10 @@ case "$RUNNING_ENV" in
         dev_command="$2"
         ./scripts/dev.sh "$dev_command"
         ;;
+    curl)
+        sudo docker build -t curl-test -f Dockerfile-curl .
+        sudo docker run --rm --network=npm_net curl-test
+        ;;
     prod)
         sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up --wait
         # sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up brag-server --build
