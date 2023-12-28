@@ -4,6 +4,8 @@ export RUNNING_ENV="$1"
 . ./scripts/env_vars.sh
 ./scripts/setup_initial.sh
 
+sudo docker network create npm_net || true
+
 case "$RUNNING_ENV" in
     dev)
         dev_command="$2"

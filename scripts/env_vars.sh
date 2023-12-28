@@ -1,10 +1,6 @@
 #!/bin/sh
 export API_PORT='3000'
-NET_HOST='db'
-if [ "$RUNNING_ENV" = 'dev' ]; then
-    NET_HOST='0.0.0.0'
-fi
-export NET_HOST
+export DB_HOST='db'
 export DATA_PATH='./data'
 export PROD_WD='/opt/brag-server'
 export RUNNING_ENV_IS_OK_FILE='.runner-dev-ok'
@@ -18,4 +14,4 @@ export POSTGRES_USER='postgres'
 export POSTGRES_DB='postgres'
 POSTGRES_PASSWORD="$(gopass show -o "$POSTGRES_PASSWORD_GOPASS")"
 export POSTGRES_PASSWORD
-export DATABASE_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${NET_HOST}:${DB_PORT}/${POSTGRES_DB}"
+export DATABASE_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DB_HOST}:${DB_PORT}/${POSTGRES_DB}"
