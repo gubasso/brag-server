@@ -10,6 +10,22 @@ services:
       - db
     secrets:
       - database_url
+  brag-server:
+    build:
+      context: .
+      dockerfile: Dockerfile-brag-server
+      args:
+        - RUST_VERSION=${RUST_VERSION}
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    environment:
+      - NET_HOST
+      - API_PORT
+    entrypoint: /entrypoint.sh
+    depends_on:
+      - db
+    secrets:
+      - database_url
   db:
     image: "postgres:${POSTGRES_VERSION}"
     restart: always

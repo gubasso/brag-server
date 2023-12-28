@@ -2,10 +2,12 @@
 
 new approach: run everything using just docker/docker-compose
 
+- [ ] deploy at production
 - [x] prune docker
 - [x] run d compose with load_db
-- [ ] add brag-server to d compose
+- [x] add brag-server to d compose
 - [x] refactor load_db: remove mergestat depedency
+
 
 ---
 

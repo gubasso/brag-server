@@ -1,0 +1,13 @@
+ARG RUST_VERSION
+# Use the official Rust image as a parent image
+FROM rust:${RUST_VERSION} as builder
+WORKDIR /brag-server
+COPY . .
+RUN cargo build --bin brag-server --release
+
+FROM ubuntu:latest
+WORKDIR /brag-server
+COPY --from=builder /brag-server/target/release/brag-server /brag-server/brag-server
+COPY scripts/brag-server_entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
