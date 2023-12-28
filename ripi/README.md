@@ -2,6 +2,11 @@
 
 ## roadmap
 
+- [ ] cleanup: review project files and scripts
+- [ ] add/update changelog
+- [ ] readme: install steps
+- [ ] update main cwnt-io repo
+
 - [x] setup NPM with `host.docker.internal`
   - [x] brag.gubasso.xyz
 - [x] deploy_build_scripts
