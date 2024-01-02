@@ -9,7 +9,8 @@ use std::{env, time::Duration};
 use std::{error::Error, fmt::Display};
 use tokio::{fs::create_dir_all, time::interval};
 
-const DAY_IN_SEC: u64 = 86400;
+// const DAY_IN_SEC: u64 = 86400;
+const HALF_DAY_IN_SEC: u64 = 43200;
 
 #[derive(Debug)]
 struct UpdateRepoError {
@@ -36,7 +37,7 @@ async fn update_repositories(
     pool: &Pool<Postgres>,
     repositories: &mut Repositories,
 ) -> Result<(), Box<dyn Error>> {
-    let mut interval = interval(Duration::from_secs(DAY_IN_SEC));
+    let mut interval = interval(Duration::from_secs(HALF_DAY_IN_SEC));
     loop {
         interval.tick().await;
         println!("# Recurring setting commits");
