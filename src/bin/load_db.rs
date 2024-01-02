@@ -3,6 +3,7 @@ use brag_server::{
     types::repositories::Repositories,
     utils::{load_config, repos_base_path},
 };
+use chrono::{DateTime, Local};
 use sqlx::{Pool, Postgres};
 
 use std::{env, time::Duration};
@@ -44,7 +45,8 @@ async fn update_repositories(
         repositories.set_all_commits()?;
         println!("# Recurring insert to DB");
         insert_commits_to_db(pool, repositories).await?;
-        println!("# Recurring insert to DB finished");
+        let now: DateTime<Local> = Local::now();
+        println!("# Recurring insert to DB finished: {}", now);
     }
 }
 
