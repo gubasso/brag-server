@@ -17,13 +17,6 @@ case "$RUNNING_ENV" in
         ;;
     prod)
         sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up --wait --build
-        # sudo -E docker compose -f "$DOCKER_COMPOSE_FILE" up brag-server --build
-        ;;
-    clean_prod)
-        sudo rm -rf  "$PROD_WD"/"$DATA_PATH"
-        sudo systemctl disable spin_db.service --now
-        sudo systemctl disable load_db.service --now
-        sudo systemctl disable brag-server.service --now
         ;;
     *)
         echo 'run main: Error: Invalid input. Please enter "dev" or "prod"'

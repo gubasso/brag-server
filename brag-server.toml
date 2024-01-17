@@ -1,6 +1,3 @@
-branches = [ "master", "develop" ]
-author_emails = [ "gubasso@eambar.net", "gubasso@cwnt.io" ]
-
 [[hosts]]
 host = "Gitlab"
 user = "gubasso"
@@ -9,6 +6,6 @@ user = "gubasso"
 host = "github"
 user = "gubasso"
 
-[[hosts]]
-host = "github"
-user = "cwnt-io"
+# [[hosts]]
+# host = "github"
+# user = "cwnt-io"
