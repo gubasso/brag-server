@@ -1,5 +1,9 @@
 # ripissue drafts
 
+## now
+
+- [ ] server is not updating correctly
+
 ## backlog
 
 - [ ] cleanup: review project files and scripts
