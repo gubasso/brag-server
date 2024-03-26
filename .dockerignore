@@ -14,8 +14,8 @@ target/
 **/*.rs.bk
 
 # Ignore default sample files
-Cargo.lock
-**/Cargo.lock
+# Cargo.lock
+# **/Cargo.lock
 
 # Ignore backup files
 *.swp
