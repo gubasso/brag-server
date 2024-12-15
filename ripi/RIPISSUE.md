@@ -2,7 +2,8 @@
 
 ## now
 
-- [ ] server is not updating correctly
+- [ ] Web Application Firewall (WAF) at the deployed server
+- [ ] server is not updating correctly (load_db)
 
 ## backlog
 
